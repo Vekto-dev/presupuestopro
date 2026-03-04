@@ -1,0 +1,4482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f2d6e">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlByZXN1cHVlc3RvUHJvIiwgInNob3J0X25hbWUiOiAiUHJlc3VwdWVzdG8iLCAiZGVzY3JpcHRpb24iOiAiUHJlc3VwdWVzdG9zIHkgZmFjdHVyYXMgcHJvZmVzaW9uYWxlcyBkZXNkZSB0dSBjZWx1bGFyIiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwZjJkNmUiLCAidGhlbWVfY29sb3IiOiAiIzBmMmQ2ZSIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXhNaUlnWm1sc2JEMGlJekJtTW1RMlpTSXZQZ29nSUR4eVpXTjBJSGc5SWpFME1DSWdlVDBpTVRBd0lpQjNhV1IwYUQwaU1qTXlJaUJvWldsbmFIUTlJak14TWlJZ2NuZzlJakU0SWlCbWFXeHNQU0ozYUdsMFpTSWdiM0JoWTJsMGVUMGlNQzR3T0NJdlBnb2dJRHh5WldOMElIZzlJakUxTmlJZ2VUMGlNVEUySWlCM2FXUjBhRDBpTWpBd0lpQm9aV2xuYUhROUlqSTRNQ0lnY25nOUlqRTBJaUJtYVd4c1BTSjNhR2wwWlNJZ2IzQmhZMmwwZVQwaU1DNDVOU0l2UGdvZ0lEd2hMUzBnVEdsdVpYTWdjbVZ3Y21WelpXNTBhVzVuSUdFZ1pHOWpkVzFsYm5RZ0xTMCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l4TmpnaUlIZHBaSFJvUFNJeE5EUWlJR2hsYVdkb2REMGlNVFFpSUhKNFBTSTNJaUJtYVd4c1BTSWpNVFUwTUdFd0lpOCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l5TURBaUlIZHBaSFJvUFNJeE5EUWlJR2hsYVdkb2REMGlNVEFpSUhKNFBTSTFJaUJtYVd4c1BTSWpPVE5oWkdZMUlpOCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l5TWpJaUlIZHBaSFJvUFNJeE1UQWlJR2hsYVdkb2REMGlNVEFpSUhKNFBTSTFJaUJtYVd4c1BTSWpPVE5oWkdZMUlpOCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l5TlRZaUlIZHBaSFJvUFNJeE5EUWlJR2hsYVdkb2REMGlNVEFpSUhKNFBTSTFJaUJtYVd4c1BTSWpZemRrTldaaUlpOCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l5TnpZaUlIZHBaSFJvUFNJeE1qQWlJR2hsYVdkb2REMGlNVEFpSUhKNFBTSTFJaUJtYVd4c1BTSWpZemRrTldaaUlpOCtDaUFnUEhKbFkzUWdlRDBpTVRnMElpQjVQU0l5T1RZaUlIZHBaSFJvUFNJeE1EQWlJR2hsYVdkb2REMGlNVEFpSUhKNFBTSTFJaUJtYVd4c1BTSWpZemRrTldaaUlpOCtDaUFnUENFdExTQlViM1JoYkNCaVlYSWdMUzArQ2lBZ1BISmxZM1FnZUQwaU1UZzBJaUI1UFNJek16QWlJSGRwWkhSb1BTSXhORFFpSUdobGFXZG9kRDBpTXpRaUlISjRQU0k0SWlCbWFXeHNQU0lqTVdFMU5tVTRJaTgrQ2lBZ1BISmxZM1FnZUQwaU1UazBJaUI1UFNJek5EQWlJSGRwWkhSb1BTSTJNQ0lnYUdWcFoyaDBQU0l4TkNJZ2NuZzlJalVpSUdacGJHdzlJbmRvYVhSbElpQnZjR0ZqYVhSNVBTSXdMallpTHo0S0lDQThjbVZqZENCNFBTSXlOemdpSUhrOUlqTTBNQ0lnZDJsa2RHZzlJalF3SWlCb1pXbG5hSFE5SWpFMElpQnllRDBpTlNJZ1ptbHNiRDBpZDJocGRHVWlMejRLUEM5emRtYysiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iIzBmMmQ2ZSIvPgogIDxyZWN0IHg9IjE0MCIgeT0iMTAwIiB3aWR0aD0iMjMyIiBoZWlnaHQ9IjMxMiIgcng9IjE4IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4wOCIvPgogIDxyZWN0IHg9IjE1NiIgeT0iMTE2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI4MCIgcng9IjE0IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45NSIvPgogIDwhLS0gTGluZXMgcmVwcmVzZW50aW5nIGEgZG9jdW1lbnQgLS0+CiAgPHJlY3QgeD0iMTg0IiB5PSIxNjgiIHdpZHRoPSIxNDQiIGhlaWdodD0iMTQiIHJ4PSI3IiBmaWxsPSIjMTU0MGEwIi8+CiAgPHJlY3QgeD0iMTg0IiB5PSIyMDAiIHdpZHRoPSIxNDQiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSIjOTNhZGY1Ii8+CiAgPHJlY3QgeD0iMTg0IiB5PSIyMjIiIHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSIjOTNhZGY1Ii8+CiAgPHJlY3QgeD0iMTg0IiB5PSIyNTYiIHdpZHRoPSIxNDQiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSIjYzdkNWZiIi8+CiAgPHJlY3QgeD0iMTg0IiB5PSIyNzYiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSIjYzdkNWZiIi8+CiAgPHJlY3QgeD0iMTg0IiB5PSIyOTYiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSIjYzdkNWZiIi8+CiAgPCEtLSBUb3RhbCBiYXIgLS0+CiAgPHJlY3QgeD0iMTg0IiB5PSIzMzAiIHdpZHRoPSIxNDQiIGhlaWdodD0iMzQiIHJ4PSI4IiBmaWxsPSIjMWE1NmU4Ii8+CiAgPHJlY3QgeD0iMTk0IiB5PSIzNDAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxNCIgcng9IjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjYiLz4KICA8cmVjdCB4PSIyNzgiIHk9IjM0MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE0IiByeD0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+">
+<meta name="apple-mobile-web-app-title" content="PresupuestoPro">
+<meta name="application-name" content="PresupuestoPro">
+<title>PresupuestoPro</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,800;1,9..144,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<style>
+/* ═══════════════════════════════════════
+   DESIGN TOKENS — ALL-BLUE PALETTE
+═══════════════════════════════════════ */
+:root {
+  /* Dark mode flag */
+  --dm: 0;
+
+  /* Blues */
+  --b950: #040d24;
+  --b900: #0a1e50;
+  --b800: #0f2d6e;
+  --b700: #1540a0;
+  --b600: #1a56e8;
+  --b500: #3b6ff0;
+  --b400: #6389f0;
+  --b300: #93adf5;
+  --b200: #c7d5fb;
+  --b100: #e8eefe;
+  --b50:  #f0f4ff;
+
+  /* Semantic */
+  --primary:     var(--b600);
+  --primary-dk:  var(--b700);
+  --primary-lt:  var(--b100);
+  --sidebar-bg:  var(--b900);
+  --sidebar-act: var(--b700);
+
+  /* Neutrals */
+  --paper:  #f5f7fc;
+  --white:  #ffffff;
+  --line:   #dde3f5;
+  --line2:  #eff2fc;
+  --ink:    #0e1b3d;
+  --ink2:   #364061;
+  --ink3:   #7888a8;
+  --ink4:   #b8c3db;
+
+  /* Status */
+  --green:     #0a7c4b;
+  --green-lt:  #d1fae5;
+  --amber:     #b45309;
+  --amber-lt:  #fef3c7;
+  --red:       #c41c1c;
+  --red-lt:    #fee2e2;
+  --teal:      #0e7490;
+  --teal-lt:   #cffafe;
+
+  /* Spacing & shape */
+  --r:    12px;
+  --r-sm: 8px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --sh:   0 1px 3px rgba(10,30,80,.08), 0 4px 16px rgba(10,30,80,.06);
+  --sh-md:0 4px 20px rgba(10,30,80,.12), 0 1px 4px rgba(10,30,80,.06);
+  --sh-lg:0 12px 48px rgba(10,30,80,.18), 0 2px 8px rgba(10,30,80,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── DARK MODE ─── */
+body.dark-mode {
+  --paper:  #0d1117; --white: #161b22; --line: #30363d; --line2: #21262d;
+  --ink: #e6edf3; --ink2: #b1bac4; --ink3: #7d8590; --ink4: #484f58;
+  --b50: #161b22; --b100: #1c2128; --b200: #30363d;
+  --sidebar-bg: #0d1117; --sidebar-act: #1c2128;
+}
+body.dark-mode .card, body.dark-mode .stat, body.dark-mode .doc-card,
+body.dark-mode .client-card, body.dark-mode .modal, body.dark-mode .filter-bar,
+body.dark-mode .mob-hdr, body.dark-mode .wz-step { background: #161b22 !important; border-color: #30363d !important; }
+body.dark-mode input, body.dark-mode select, body.dark-mode textarea {
+  background: #0d1117 !important; color: #e6edf3 !important; border-color: #30363d !important;
+}
+body.dark-mode .btn-sec { background: #21262d !important; color: #b1bac4 !important; border-color: #30363d !important; }
+body.dark-mode input::placeholder { color: #484f58 !important; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+/* ═══ LAYOUT ═══ */
+.shell { display: flex; min-height: 100vh; }
+
+/* ═══════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════ */
+.sidebar {
+  width: 256px;
+  background: var(--sidebar-bg);
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 60;
+  overflow: hidden;
+}
+
+/* Subtle mesh gradient on sidebar */
+.sidebar::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(26,86,232,.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(99,137,240,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sb-brand {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.sb-logo-mark {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--b500) 0%, var(--b700) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(26,86,232,.5);
+}
+.sb-brand-text h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+.sb-brand-text p {
+  font-size: .68rem;
+  color: var(--b300);
+  margin-top: 2px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.sb-nav { flex: 1; padding: 12px 10px; overflow-y: auto; }
+.sb-section { font-size: .64rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--b400); padding: 14px 10px 6px; }
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: var(--r-sm);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all .15s;
+  color: rgba(255,255,255,.5);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+}
+.nav-btn:hover { background: rgba(255,255,255,.06); color: rgba(255,255,255,.85); }
+.nav-btn.on { background: var(--sidebar-act); color: #fff; font-weight: 600; }
+.nav-btn.on::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; height: 60%;
+  width: 3px; background: var(--b400);
+  border-radius: 0 2px 2px 0;
+}
+.nav-ico { font-size: .95rem; width: 18px; text-align: center; flex-shrink: 0; }
+.nav-pill {
+  margin-left: auto;
+  background: var(--b600);
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.sb-footer {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.biz-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--r-sm);
+  transition: background .15s;
+}
+.biz-pill:hover { background: rgba(255,255,255,.06); }
+.biz-avatar {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: var(--b700);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: .85rem;
+}
+.biz-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.biz-pill-txt { flex: 1; min-width: 0; }
+.biz-pill-txt strong { display: block; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.biz-pill-txt span { font-size: .68rem; color: var(--b400); }
+.biz-pill-edit { color: rgba(255,255,255,.3); font-size: .75rem; }
+
+/* ═══ MAIN ═══ */
+.main { margin-left: 256px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ═══ TOPBAR (desktop) ═══ */
+.topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 1px 0 var(--line2);
+}
+.tb-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; }
+.tb-sub { font-size: .78rem; color: var(--ink3); margin-left: 2px; }
+.tb-right { margin-left: auto; }
+
+/* ═══ CONTENT ═══ */
+.content { padding: 24px 28px 56px; flex: 1; }
+
+/* ═══ SCREENS ═══ */
+.screen { display: none; }
+.screen.on { display: block; animation: fadeUp .2s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ═══════════════════════════════════════
+   COMPONENTS
+═══════════════════════════════════════ */
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 22px;
+  box-shadow: var(--sh);
+  margin-bottom: 18px;
+}
+.card-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.card-t {
+  font-family: 'Fraunces', serif;
+  font-size: .98rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.card-ico {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: var(--primary-lt);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem;
+  color: var(--primary);
+}
+
+/* Steps wizard */
+.wizard {
+  display: flex;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 5px;
+  margin-bottom: 22px;
+  box-shadow: var(--sh);
+  gap: 2px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.wz-step {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all .18s;
+  white-space: nowrap;
+}
+.wz-step:hover:not(.wz-on) { background: var(--b50); }
+.wz-step.wz-on { background: var(--primary); }
+.wz-step.wz-done { background: var(--b50); }
+.wz-n {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--line);
+  color: var(--ink3);
+  font-size: .72rem;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all .18s;
+}
+.wz-step.wz-on .wz-n { background: rgba(255,255,255,.25); color: #fff; }
+.wz-step.wz-done .wz-n { background: var(--green); color: #fff; }
+.wz-lbl { font-size: .8rem; font-weight: 600; color: var(--ink3); }
+.wz-step.wz-on .wz-lbl { color: #fff; }
+.wz-step.wz-done .wz-lbl { color: var(--green); }
+
+/* Forms */
+.fg { display: grid; gap: 14px; margin-bottom: 14px; }
+.fg2 { grid-template-columns: 1fr 1fr; }
+.fg3 { grid-template-columns: 1fr 1fr 1fr; }
+.fg1 { grid-template-columns: 1fr; }
+.fgrp { display: flex; flex-direction: column; gap: 5px; }
+.fgrp label { font-size: .74rem; font-weight: 700; color: var(--ink2); letter-spacing: .02em; }
+.fgrp label .req { color: var(--red); margin-left: 2px; }
+input[type=text], input[type=number], input[type=email],
+input[type=tel], input[type=date], select, textarea {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .88rem;
+  color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 10px 13px;
+  transition: border-color .15s, box-shadow .15s;
+  outline: none;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,86,232,.12);
+}
+input::placeholder, textarea::placeholder { color: var(--ink4); }
+textarea { resize: vertical; min-height: 78px; line-height: 1.55; }
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%237888a8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 34px;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition: all .15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  white-space: nowrap;
+  font-size: .86rem;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-lg { padding: 13px 22px; font-size: .9rem; }
+.btn-md { padding: 10px 17px; }
+.btn-sm { padding: 7px 12px; font-size: .8rem; }
+.btn-xs { padding: 5px 10px; font-size: .75rem; }
+.btn-sq { width: 34px; height: 34px; padding: 0; }
+.btn-sq-sm { width: 30px; height: 30px; padding: 0; border-radius: var(--r-sm); }
+
+.btn-pri {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(26,86,232,.28);
+}
+.btn-pri:hover { background: var(--primary-dk); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(26,86,232,.35); }
+.btn-pri:active { transform: none; }
+
+.btn-sec {
+  background: var(--white);
+  color: var(--ink2);
+  border: 1.5px solid var(--line);
+}
+.btn-sec:hover { border-color: var(--primary); color: var(--primary); }
+
+.btn-ghost { background: none; color: var(--ink3); border: 1.5px solid transparent; }
+.btn-ghost:hover { background: var(--b50); color: var(--primary); }
+
+.btn-del { background: var(--red-lt); color: var(--red); border: 1.5px solid #fecaca; }
+.btn-del:hover { background: #fecaca; }
+
+.btn-ok { background: var(--green); color: #fff; box-shadow: 0 3px 12px rgba(10,124,75,.22); }
+.btn-ok:hover { background: #086640; }
+
+.btn-blue-lt { background: var(--b100); color: var(--primary); border: 1.5px solid var(--b200); }
+.btn-blue-lt:hover { background: var(--b200); }
+
+/* Tags / chips */
+.chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 9px; border-radius: 20px;
+  font-size: .72rem; font-weight: 700;
+}
+.chip-blue   { background: var(--b100);    color: var(--b700); }
+.chip-green  { background: var(--green-lt); color: var(--green); }
+.chip-amber  { background: var(--amber-lt); color: var(--amber); }
+.chip-red    { background: var(--red-lt);   color: var(--red); }
+.chip-gray   { background: var(--line2);    color: var(--ink3); border: 1px solid var(--line); }
+.chip-teal   { background: var(--teal-lt);  color: var(--teal); }
+
+/* Divider */
+.hr {
+  display: flex; align-items: center; gap: 10px;
+  margin: 18px 0 14px;
+}
+.hr span { font-size: .72rem; font-weight: 700; color: var(--ink3); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.hr::before, .hr::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+/* Items rows */
+/* ─── ITEM CARDS — mobile-first ─── */
+.items-hd { display: none; } /* hidden on mobile, shown on desktop */
+
+/* Each item is a card */
+.item-card {
+  background: var(--white);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  animation: rowIn .15s ease;
+  position: relative;
+}
+@keyframes rowIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+
+.item-card-desc {
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  padding-right: 28px; /* room for delete btn */
+}
+.item-card-desc input {
+  width: 100%;
+  font-size: .88rem;
+  font-weight: 600;
+  border: none;
+  border-bottom: 1.5px solid var(--line2);
+  border-radius: 0;
+  padding: 4px 0;
+  background: transparent;
+}
+.item-card-desc input:focus { border-bottom-color: var(--primary); outline: none; }
+
+.item-card-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 100px;
+  gap: 8px;
+  align-items: end;
+}
+.item-card-field label {
+  font-size: .65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink3);
+  display: block;
+  margin-bottom: 3px;
+}
+.item-card-field input,
+.item-card-field select {
+  width: 100%;
+  font-size: .84rem;
+  padding: 7px 8px;
+}
+.item-card-del {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--ink3);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+}
+.item-card-del:hover { background: var(--red-lt); color: var(--red); }
+.item-card-disc {
+  display: none;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line2);
+}
+.item-card-disc.open { display: block; }
+
+/* Add item form */
+.add-item-form {
+  background: var(--b50);
+  border: 1.5px dashed var(--b200);
+  border-radius: var(--r);
+  padding: 14px;
+  margin-top: 4px;
+}
+.add-item-form .ai-desc {
+  position: relative;
+  margin-bottom: 10px;
+}
+.add-item-form .ai-desc input {
+  width: 100%;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 10px 12px;
+}
+.add-item-form .ai-row {
+  display: grid;
+  grid-template-columns: 1fr 72px 110px;
+  gap: 8px;
+  align-items: end;
+  margin-bottom: 10px;
+}
+.add-item-form .ai-field label {
+  font-size: .65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink3);
+  display: block;
+  margin-bottom: 3px;
+}
+.add-item-form .ai-field input,
+.add-item-form .ai-field select {
+  width: 100%;
+  font-size: .84rem;
+  padding: 8px 10px;
+}
+.add-item-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: .9rem;
+  padding: 11px;
+  border-radius: var(--r-sm);
+}
+
+/* Desktop: keep table layout for items */
+@media (min-width: 640px) {
+  .items-hd {
+    display: grid;
+    grid-template-columns: 1fr 88px 100px 100px 34px;
+    gap: 6px;
+    padding: 7px 8px;
+    background: var(--b50);
+    border-radius: var(--r-sm);
+    margin-bottom: 4px;
+  }
+  .items-hd span { font-size:.68rem;font-weight:800;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase; }
+}
+
+/* Legacy — keep for desktop item rows if needed */
+.item-row { display: none; }
+.add-row  { display: none; }
+
+/* Totals */
+.tot-box { background: var(--b50); border: 1px solid var(--b200); border-radius: var(--r); overflow: hidden; }
+.tot-row { display: flex; justify-content: space-between; padding: 9px 15px; font-size: .86rem; color: var(--ink2); border-bottom: 1px solid var(--b200); }
+.tot-row:last-child { border-bottom: none; }
+.tot-row.grand { background: var(--b800); color: #fff; font-family: 'Fraunces', serif; font-size: 1.08rem; font-weight: 700; padding: 13px 15px; }
+.tot-row .v { font-weight: 600; color: var(--ink); }
+.tot-row.grand .v { color: var(--b300); font-family: 'Fraunces', serif; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 22px; }
+.stat {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  box-shadow: var(--sh);
+}
+.stat-l { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--ink3); margin-bottom: 6px; }
+.stat-v { font-family: 'Fraunces', serif; font-size: 1.45rem; font-weight: 700; color: var(--ink); }
+.stat-s { font-size: .72rem; color: var(--ink3); margin-top: 2px; }
+
+/* ═══════════════════════════════════════
+   DOC LIST
+═══════════════════════════════════════ */
+.doc-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 5px;
+  margin-bottom: 16px;
+  box-shadow: var(--sh);
+}
+.doc-tab {
+  flex: 1; padding: 9px 12px;
+  border-radius: var(--r-sm);
+  border: none; background: none; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .83rem; font-weight: 700;
+  color: var(--ink3);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  transition: all .15s;
+}
+.doc-tab:hover { background: var(--b50); color: var(--primary); }
+.doc-tab.on { background: var(--primary); color: #fff; box-shadow: 0 2px 10px rgba(26,86,232,.3); }
+.doc-tab-count {
+  background: rgba(255,255,255,.25);
+  padding: 1px 6px; border-radius: 10px;
+  font-size: .68rem;
+}
+.doc-tab:not(.on) .doc-tab-count { background: var(--b100); color: var(--primary); }
+
+.filter-bar {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: var(--sh);
+}
+.filter-bar input { flex: 1; min-width: 160px; }
+.filter-group { display: flex; align-items: center; gap: 6px; }
+.filter-group label { font-size: .74rem; font-weight: 700; color: var(--ink3); white-space: nowrap; }
+.filter-group select { width: auto; font-size: .82rem; }
+
+.doc-list { display: flex; flex-direction: column; gap: 9px; }
+.doc-card {
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color .15s, box-shadow .15s;
+  box-shadow: var(--sh);
+}
+.doc-card:hover { border-color: var(--primary); box-shadow: var(--sh-md); }
+.doc-card.clickable { cursor: pointer; }
+
+/* Top row: icon + info + amount */
+.doc-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.doc-ico {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.doc-ico.pres { background: var(--b100); }
+.doc-ico.fact { background: var(--green-lt); }
+.doc-inf { flex: 1; min-width: 0; }
+.doc-inf h3 {
+  font-size: .92rem; font-weight: 700; margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.doc-inf p { font-size: .76rem; color: var(--ink3); }
+.doc-tot {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--ink); flex-shrink: 0;
+  text-align: right; white-space: nowrap;
+}
+
+/* Bottom row: chip + actions */
+.doc-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.doc-acts { display: flex; gap: 5px; }
+
+.empty-state { text-align: center; padding: 56px 20px; color: var(--ink3); }
+.empty-state .ei { font-size: 3rem; margin-bottom: 12px; opacity: .45; }
+.empty-state h3 { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--ink2); margin-bottom: 5px; }
+.empty-state p { font-size: .84rem; }
+
+/* ═══════════════════════════════════════
+   CLIENT CATALOG
+═══════════════════════════════════════ */
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.client-card {
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 18px;
+  box-shadow: var(--sh);
+  transition: all .15s;
+  cursor: pointer;
+}
+.client-card:hover { border-color: var(--primary); box-shadow: var(--sh-md); transform: translateY(-1px); }
+.client-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.client-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--b500) 0%, var(--b700) 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.client-info h3 { font-size: .9rem; font-weight: 700; margin-bottom: 2px; }
+.client-info p { font-size: .76rem; color: var(--ink3); }
+.client-meta { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+.client-meta-row { display: flex; align-items: center; gap: 7px; font-size: .78rem; color: var(--ink2); }
+.client-meta-row .ico { font-size: .8rem; width: 16px; }
+.client-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.tag-item {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--b50); border: 1px solid var(--b200);
+  color: var(--primary); padding: 3px 8px; border-radius: 20px;
+  font-size: .7rem; font-weight: 600;
+}
+.client-footer { display: flex; gap: 6px; }
+.reminder-badge {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--amber-lt); border: 1px solid #fde68a;
+  color: var(--amber); padding: 5px 10px; border-radius: 6px;
+  font-size: .76rem; font-weight: 600;
+  flex: 1;
+}
+
+/* ═══ CLIENT MODAL ═══ */
+.modal-ov {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(10,30,80,.65);
+  backdrop-filter: blur(5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+.modal-ov.on { display: flex; }
+.modal {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--sh-lg);
+  animation: mIn .2s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+@keyframes mIn { from { opacity: 0; transform: scale(.95) translateY(10px); } to { opacity: 1; transform: none; } }
+.modal h2 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 18px; }
+.modal-foot { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+/* ═══ SHARE MODAL ═══ */
+.share-opts { display: flex; flex-direction: column; gap: 9px; }
+.share-opt {
+  display: flex; align-items: center; gap: 13px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r);
+  cursor: pointer;
+  transition: all .15s;
+  background: var(--white);
+}
+.share-opt:hover { border-color: var(--primary); background: var(--b50); }
+.share-opt-ico { font-size: 1.3rem; width: 36px; height: 36px; background: var(--b50); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+.share-opt-txt strong { display: block; font-size: .88rem; font-weight: 700; color: var(--ink); }
+.share-opt-txt span { font-size: .76rem; color: var(--ink3); }
+
+/* ═══ PDF OVERLAY ═══ */
+.pdf-ov {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(4,13,36,.88);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 14px;
+  overflow-y: auto;
+}
+.pdf-ov.on { display: flex; }
+.pdf-wrap {
+  background: #fff;
+  width: 100%; max-width: 680px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 32px 96px rgba(0,0,0,.5);
+  margin: auto;
+  color: #111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  position: relative;
+}
+.pdf-bar {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--b900);
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 16px;
+}
+.pdf-bar-lbl { font-size: .82rem; color: rgba(255,255,255,.55); flex: 1; }
+.pdf-content { padding: 44px; }
+/* PDF internal styles */
+.pdoc-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid #e8effe; }
+.pdoc-logo { width: 72px; height: 72px; border-radius: 10px; background: #eef2fd; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; overflow: hidden; border: 1.5px solid #dde3f5; flex-shrink: 0; }
+.pdoc-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pdoc-biz-name { font-size: .96rem; font-weight: 700; color: #0e1b3d; }
+.pdoc-biz-det { font-size: .75rem; color: #64748b; margin-top: 3px; line-height: 1.65; }
+.pdoc-type { text-align: right; }
+.pdoc-type h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 800; color: #1a56e8; }
+.pdoc-type .dn { font-size: .84rem; color: #64748b; margin-top: 2px; }
+.pdoc-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.pdoc-mb { background: #f5f7fc; border-radius: 9px; padding: 12px 14px; }
+.pdoc-mb .l { font-size: .63rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #94a3b8; margin-bottom: 3px; }
+.pdoc-mb .v { font-size: .87rem; font-weight: 600; color: #0e1b3d; }
+.pdoc-mb .v2 { font-size: .75rem; color: #64748b; margin-top: 2px; }
+.pdoc-sl { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: #fff; background: #1540a0; padding: 6px 12px; border-radius: 6px 6px 0 0; margin-top: 12px; }
+.pdoc-tbl { width: 100%; border-collapse: collapse; }
+.pdoc-tbl th { background: #f0f4ff; font-size: .72rem; font-weight: 800; color: #364061; padding: 8px 11px; text-align: left; letter-spacing: .04em; }
+.pdoc-tbl th:nth-child(n+3) { text-align: right; }
+.pdoc-tbl td { padding: 9px 11px; font-size: .83rem; color: #374151; border-bottom: 1px solid #f0f4ff; }
+.pdoc-tbl td:nth-child(n+3) { text-align: right; }
+.pdoc-tbl tr:last-child td { border-bottom: none; }
+.pdoc-tbl tr:nth-child(even) td { background: #fafbff; }
+.pdoc-tots { display: flex; justify-content: flex-end; margin-top: 18px; }
+.pdoc-tots-box { min-width: 248px; border: 1px solid #e8effe; border-radius: 9px; overflow: hidden; }
+.pdoc-tr { display: flex; justify-content: space-between; padding: 8px 13px; font-size: .83rem; color: #64748b; border-bottom: 1px solid #e8effe; }
+.pdoc-tr:last-child { border-bottom: none; }
+.pdoc-tr.g { background: #1540a0; color: #fff; font-weight: 800; font-size: .96rem; padding: 12px 13px; }
+.pdoc-notes { margin-top: 20px; padding: 13px 15px; background: #fffbeb; border-radius: 9px; border-left: 3px solid #f59e0b; }
+.pdoc-notes .nl { font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: #d97706; margin-bottom: 5px; }
+.pdoc-notes p { font-size: .82rem; color: #555; line-height: 1.55; }
+.pdoc-foot { margin-top: 24px; padding-top: 14px; border-top: 1px solid #e8effe; text-align: center; font-size: .69rem; color: #94a3b8; }
+.pdoc-stamp { position: absolute; bottom: 60px; right: 44px; transform: rotate(-18deg); font-size: 2.2rem; font-weight: 900; border: 4px solid; padding: 7px 18px; border-radius: 6px; opacity: .12; pointer-events: none; text-transform: uppercase; letter-spacing: .2em; white-space: nowrap; }
+.stamp-ok { color: #0a7c4b; border-color: #0a7c4b; }
+.stamp-exp { color: #c41c1c; border-color: #c41c1c; }
+
+/* ═══ LOGO UPLOAD ═══ */
+.logo-drop {
+  width: 104px; height: 104px;
+  border-radius: var(--r);
+  border: 2px dashed var(--b200);
+  background: var(--b50);
+  cursor: pointer;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 5px;
+  transition: all .18s;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.logo-drop:hover { border-color: var(--primary); background: var(--b100); }
+.logo-drop img { width: 100%; height: 100%; object-fit: cover; }
+.logo-drop .ld-ico { font-size: 1.5rem; }
+.logo-drop .ld-txt { font-size: .67rem; font-weight: 700; color: var(--ink3); text-align: center; line-height: 1.35; }
+.logo-drop .ld-ov { position: absolute; inset: 0; background: rgba(10,30,80,.5); display: none; align-items: center; justify-content: center; color: #fff; font-size: .74rem; font-weight: 700; border-radius: var(--r); }
+.logo-drop:hover .ld-ov { display: flex; }
+#logoFile { display: none; }
+
+/* ═══ EXPIRY ALERT ═══ */
+.exp-warn { display: flex; align-items: center; gap: 7px; background: var(--amber-lt); border: 1px solid #fde68a; border-radius: var(--r-sm); padding: 8px 12px; font-size: .8rem; color: var(--amber); font-weight: 600; margin-top: 8px; }
+
+/* ═══ FREEMIUM / UPGRADE ═══ */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+.plan-card {
+  border: 2px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 20px 16px;
+  text-align: center;
+  background: var(--white);
+  transition: all .18s;
+  position: relative;
+  overflow: hidden;
+}
+.plan-card.featured {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,86,232,.1), var(--sh-md);
+}
+.plan-card.featured::before {
+  content: '⭐ MÁS POPULAR';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: var(--primary);
+  color: #fff;
+  font-size: .62rem;
+  font-weight: 800;
+  padding: 4px;
+  letter-spacing: .08em;
+}
+.plan-card.featured .plan-body { margin-top: 12px; }
+.plan-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.plan-price {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.plan-price span { font-size: .75rem; font-weight: 500; color: var(--ink3); font-family: 'Plus Jakarta Sans', sans-serif; }
+.plan-desc { font-size: .73rem; color: var(--ink3); margin-bottom: 12px; }
+.plan-features { text-align: left; margin-bottom: 14px; }
+.plan-feat-row {
+  display: flex; align-items: center; gap: 7px;
+  font-size: .78rem; color: var(--ink2);
+  padding: 3px 0;
+}
+.plan-feat-row .fi { font-size: .8rem; flex-shrink: 0; }
+
+.upgrade-banner {
+  background: linear-gradient(135deg, var(--b800) 0%, var(--b600) 100%);
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  box-shadow: var(--sh-md);
+}
+.upgrade-banner-ico { font-size: 1.8rem; flex-shrink: 0; }
+.upgrade-banner-txt { flex: 1; }
+.upgrade-banner-txt h3 { font-family: 'Fraunces', serif; font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.upgrade-banner-txt p { font-size: .76rem; color: rgba(255,255,255,.65); }
+
+.limit-bar-wrap { margin: 6px 0 12px; }
+.limit-bar-label { display: flex; justify-content: space-between; font-size: .74rem; color: var(--ink3); margin-bottom: 4px; }
+.limit-bar-track { height: 6px; background: var(--line); border-radius: 10px; overflow: hidden; }
+.limit-bar-fill { height: 100%; border-radius: 10px; background: var(--primary); transition: width .4s ease; }
+.limit-bar-fill.warn { background: var(--amber); }
+.limit-bar-fill.full { background: var(--red); }
+
+.pro-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: linear-gradient(135deg, var(--b600), var(--b800));
+  color: #fff;
+  font-size: .65rem; font-weight: 800;
+  padding: 2px 8px; border-radius: 20px;
+  letter-spacing: .04em;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+@media (max-width: 840px) {
+  .plan-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 841px) and (max-width: 1000px) {
+  .plan-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ═══ TOAST ═══ */
+.toast {
+  position: fixed; bottom: 24px; right: 24px; z-index: 500;
+  background: var(--b900);
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: var(--r);
+  font-size: .85rem; font-weight: 600;
+  display: flex; align-items: center; gap: 9px;
+  box-shadow: var(--sh-lg);
+  transform: translateY(18px);
+  opacity: 0;
+  transition: all .28s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+  max-width: 300px;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.td-ok  { background: #4ade80; }
+.td-err { background: #f87171; }
+.td-inf { background: var(--b400); }
+
+/* ═══ MOBILE HEADER ═══ */
+.mob-hdr {
+  display: none;
+  background: var(--b900);
+  padding: 0 16px;
+  height: 54px;
+  align-items: center;
+  gap: 12px;
+  position: sticky; top: 0; z-index: 70;
+}
+.mob-hdr-title { font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.05rem; color: #fff; flex: 1; }
+.ham { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 8px; color: rgba(255,255,255,.7); -webkit-tap-highlight-color: transparent; }
+.sb-back { display: none; position: fixed; inset: 0; z-index: 59; background: rgba(4,13,36,.5); }
+
+/* ═══ BOTTOM NAV (mobile) ═══ */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  z-index: 50;
+  padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(10,30,80,.1);
+}
+.bottom-nav-inner { display: flex; }
+.bn-item {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 6px 4px;
+  border: none; background: none; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .62rem; font-weight: 700;
+  color: var(--ink3);
+  transition: color .15s;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+.bn-item.on { color: var(--primary); }
+.bn-ico { font-size: 1.25rem; line-height: 1; }
+.bn-dot { position: absolute; top: 4px; right: calc(50% - 16px); background: var(--primary); color: #fff; font-size: .55rem; font-weight: 800; padding: 1px 5px; border-radius: 10px; min-width: 16px; text-align: center; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 840px) {
+  .shell { display: block; }
+  .sidebar { transform: translateX(-100%); transition: transform .24s ease; box-shadow: none; }
+  .sidebar.open { transform: translateX(0); box-shadow: 4px 0 32px rgba(4,13,36,.35); }
+  .sb-back.on { display: block; }
+  .main { margin-left: 0; }
+  .topbar { display: none; }
+  .mob-hdr { display: flex; }
+  .bottom-nav { display: block; }
+  .content { padding: 16px 14px 80px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .fg2, .fg3 { grid-template-columns: 1fr; }
+  .client-grid { grid-template-columns: 1fr; }
+  .doc-acts .btn-md { display: none; }
+  .pdoc-meta { grid-template-columns: 1fr; }
+  .pdf-content { padding: 24px 18px; }
+}
+@media (max-width: 420px) {
+  .wizard { flex-wrap: nowrap; }
+  .wz-step { min-width: auto; flex-shrink: 0; }
+  .stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ INSTALL BANNER ══════ -->
+<div id="installBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:linear-gradient(135deg,#0a1e50,#1540a0);
+  padding:14px 16px 20px;box-shadow:0 -4px 24px rgba(10,30,80,.4);
+">
+  <div style="max-width:480px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+      <div style="width:44px;height:44px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">📋</div>
+      <div style="flex:1">
+        <div style="font-size:.9rem;font-weight:800;color:#fff;margin-bottom:1px">Instalá PresupuestoPro en tu celu</div>
+        <div style="font-size:.73rem;color:rgba(255,255,255,.6)">Recomendado para mejor experiencia</div>
+      </div>
+      <button onclick="dismissInstallForever()" style="background:none;border:none;color:rgba(255,255,255,.4);font-size:1.3rem;cursor:pointer;padding:4px;flex-shrink:0;line-height:1">✕</button>
+    </div>
+    <div style="font-size:.77rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:12px;background:rgba(255,255,255,.07);border-radius:8px;padding:10px 12px">
+      Agregar la app a tu pantalla de inicio te permite abrirla directo, sin buscar el archivo cada vez. <strong style="color:#fff">No instala nada en tu teléfono</strong>, no ocupa espacio extra ni te pide permisos. Es simplemente un acceso directo.
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="installBannerBtn" class="btn btn-sm" style="flex:1;justify-content:center;background:#fff;color:#0f2d6e;font-weight:800;border:none" onclick="doInstall()">
+        Agregar a inicio
+      </button>
+      <button onclick="remindLater()" style="flex:1;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);border-radius:var(--r-sm);font-size:.78rem;font-weight:600;cursor:pointer;padding:8px">
+        Ahora no
+      </button>
+    </div>
+    <div id="installBannerMsg" style="font-size:.72rem;color:rgba(255,255,255,.5);margin-top:8px;display:none"></div>
+  </div>
+</div>
+
+<!-- ══════ INSTALL INSTRUCTIONS MODAL ══════ -->
+<div class="modal-ov" id="iosMod">
+  <div class="modal" style="max-width:380px;text-align:center">
+    <div style="font-size:2.5rem;margin-bottom:10px">📲</div>
+    <h2 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:800;margin-bottom:4px" id="installModalTitle">Agregar PresupuestoPro a tu inicio</h2>
+    <p style="font-size:.8rem;color:var(--ink3);margin-bottom:6px;line-height:1.6">Esto no instala nada en tu telefono. Es solo un acceso directo, como un contacto guardado. No ocupa espacio ni pide permisos.</p>
+    <div id="installModalSteps" style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;text-align:left"></div>
+    <button class="btn btn-pri btn-lg" style="width:100%;justify-content:center" onclick="document.getElementById('iosMod').classList.remove('on');localStorage.setItem('pp4_install_done','1');document.getElementById('btnInstallApp').style.display='none'">Entendido, ya lo hice</button>
+    <button class="btn btn-ghost btn-sm" style="margin-top:8px;width:100%;justify-content:center" onclick="document.getElementById('iosMod').classList.remove('on')">Más tarde</button>
+  </div>
+</div>
+
+<!-- ══════ SPLASH SCREEN ══════ -->
+<div id="splashScreen" style="
+  position:fixed;inset:0;z-index:99999;
+  background:linear-gradient(160deg,#040d24 0%,#0f2d6e 55%,#1a56e8 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .5s ease;
+">
+  <div style="
+    width:88px;height:88px;background:#fff;border-radius:22px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.6rem;box-shadow:0 8px 40px rgba(26,86,232,.5);
+    animation:splashPop .55s cubic-bezier(.34,1.56,.64,1) both;
+    margin-bottom:22px;
+  ">📋</div>
+  <div style="animation:splashFade .5s .2s both">
+    <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:800;color:#fff;text-align:center;letter-spacing:-.01em;line-height:1.1">
+      Presupuesto<span style="color:#93adf5">Pro</span>
+    </div>
+    <div style="font-size:.78rem;color:rgba(255,255,255,.45);text-align:center;margin-top:6px;letter-spacing:.04em">
+      ARGENTINA · ARS
+    </div>
+  </div>
+  <div style="position:absolute;bottom:38px;display:flex;flex-direction:column;align-items:center;gap:6px;animation:splashFade .5s .5s both">
+    <div style="width:32px;height:3px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden">
+      <div id="splashBar" style="height:100%;width:0;background:#93adf5;border-radius:2px;transition:width 1.8s linear"></div>
+    </div>
+    <div style="font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.06em">por <strong style="color:rgba(255,255,255,.5)">Lautaro Antunez</strong></div>
+  </div>
+</div>
+<style>
+@keyframes splashPop  { from{transform:scale(.6);opacity:0} to{transform:scale(1);opacity:1} }
+@keyframes splashFade { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+</style>
+
+<!-- MOBILE HEADER -->
+<div class="mob-hdr" id="mobHdr">
+  <button class="ham" onclick="toggleSB()" aria-label="Menú">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="12" x2="19" y2="12"/><line x1="3" y1="17" x2="19" y2="17"/>
+    </svg>
+  </button>
+  <span class="mob-hdr-title" id="mobTitle">Inicio</span>
+</div>
+
+<!-- SIDEBAR BACKDROP -->
+<div class="sb-back" id="sbBack" onclick="toggleSB()"></div>
+
+<div class="shell">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo-mark">📋</div>
+    <div class="sb-brand-text">
+      <h1>Presupuesto<br>Pro</h1>
+      <p>Argentina · ARS</p>
+    </div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Principal</div>
+    <button class="nav-btn on" onclick="goS('dashboard')"><span class="nav-ico">🏠</span>Inicio</button>
+    <button class="nav-btn" onclick="goS('nuevo')"><span class="nav-ico">✏️</span>Nuevo presupuesto</button>
+    <button class="nav-btn" onclick="goS('docs')"><span class="nav-ico">📄</span>Mis documentos<span class="nav-pill" id="navBadge">0</span></button>
+    <button class="nav-btn" onclick="goS('clientes')"><span class="nav-ico">👥</span>Clientes<span class="nav-pill" id="navCliBadge">0</span></button>
+    <div class="sb-section">Configuración</div>
+    <button class="nav-btn" onclick="goS('negocio')"><span class="nav-ico">🏢</span>Mi negocio</button>
+    <button class="nav-btn" onclick="goS('config')"><span class="nav-ico">⚙️</span>Configuración</button>
+    <div class="sb-section">Mi cuenta</div>
+    <button class="nav-btn" id="navProBtn" onclick="openUpgrade()"><span class="nav-ico">🚀</span><span id="navProLabel">Actualizar a Pro</span></button>
+  </nav>
+  <div class="sb-footer">
+    <button onclick="toggleDarkMode()" id="darkModeBtn"
+      style="width:100%;margin-bottom:6px;background:rgba(147,173,245,.08);color:var(--b300);border:1px solid rgba(147,173,245,.15);border-radius:var(--r-sm);padding:8px;font-size:.76rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px">
+      🌙 Modo oscuro
+    </button>
+    <button onclick="showDeviceLink()"
+      style="width:100%;margin-bottom:6px;background:rgba(147,173,245,.08);color:var(--b300);border:1px solid rgba(147,173,245,.15);border-radius:var(--r-sm);padding:8px;font-size:.76rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px">
+      🔗 Vincular otro dispositivo
+    </button>
+    <button class="btn" onclick="showInstallInstructions()" id="btnInstallApp"
+      style="width:100%;margin-bottom:6px;background:rgba(147,173,245,.15);color:var(--b300);border:1px solid rgba(147,173,245,.25);border-radius:var(--r-sm);padding:9px;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px">
+      📲 Instalar en el celular
+    </button>
+    <button class="btn" onclick="shareApp()"
+      style="width:100%;margin-bottom:8px;background:rgba(26,86,232,.12);color:var(--b300);border:1px solid rgba(99,137,240,.2);border-radius:var(--r-sm);padding:9px;font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:7px">
+      💬 Compartir app
+    </button>
+    <div class="biz-pill" onclick="goS('negocio')">
+      <div class="biz-avatar" id="sbAvatar">🔧</div>
+      <div class="biz-pill-txt"><strong id="sbName">Mi Negocio</strong><span id="sbSub">Configurar →</span></div>
+      <span class="biz-pill-edit">✎</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+  <div class="topbar">
+    <div>
+      <div class="tb-title" id="tbTitle">Inicio</div>
+      <div class="tb-sub" id="tbSub">Resumen de tu actividad</div>
+    </div>
+    <div class="tb-right"></div>
+  </div>
+
+  <div class="content">
+
+  <!-- ══════════ DASHBOARD ══════════ -->
+  <div class="screen on" id="screen-dashboard">
+    <div id="dashWelcome" style="
+      background:linear-gradient(135deg,var(--b800) 0%,var(--b600) 100%);
+      border-radius:var(--r-lg);padding:22px 24px 20px;margin-bottom:20px;
+      position:relative;overflow:hidden;
+    ">
+      <div style="position:absolute;right:-20px;top:-20px;width:130px;height:130px;
+        background:rgba(255,255,255,.04);border-radius:50%"></div>
+      <div style="position:absolute;right:30px;top:10px;width:70px;height:70px;
+        background:rgba(255,255,255,.05);border-radius:50%"></div>
+      <div style="font-size:1.45rem;font-weight:800;font-family:'Fraunces',serif;color:#fff;
+        margin-bottom:4px;position:relative" id="dashGreeting"></div>
+      <div id="dashBizNameHdr" style="font-size:.85rem;color:rgba(255,255,255,.6);
+        position:relative;margin-bottom:14px"></div>
+      <div id="dashFreemiumBanner"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-l">Presupuestos</div><div class="stat-v" id="stP">0</div><div class="stat-s">Total emitidos</div></div>
+      <div class="stat"><div class="stat-l">Facturas</div><div class="stat-v" id="stF">0</div><div class="stat-s">No fiscales</div></div>
+      <div class="stat"><div class="stat-l">Aceptados</div><div class="stat-v" id="stA" style="color:var(--green)">0</div><div class="stat-s">Este mes</div></div>
+      <div class="stat"><div class="stat-l">Por vencer</div><div class="stat-v" id="stV" style="color:var(--amber)">0</div><div class="stat-s">Próximos 7 días</div></div>
+    </div>
+    <!-- REVENUE CARDS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+      <div class="card" style="padding:16px 18px;border-left:3px solid var(--primary)">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:6px">Facturado este mes</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--ink);line-height:1.1" id="stRevMonth">$ 0</div>
+        <div style="font-size:.72rem;color:var(--ink3);margin-top:3px">Aprobados y cobrados del mes</div>
+      </div>
+      <div class="card" style="padding:16px 18px;border-left:3px solid var(--green)">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);margin-bottom:6px">Cobrado este mes</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--green);line-height:1.1" id="stRevCobrado">$ 0</div>
+        <div style="font-size:.72rem;color:var(--ink3);margin-top:3px">Docs marcados cobrados</div>
+      </div>
+    </div>
+    <button class="btn btn-sec btn-md" onclick="generarReporteMensual()" style="width:100%;justify-content:center;margin-bottom:16px;gap:8px">
+      📊 Descargar reporte mensual PDF
+    </button>
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t"><div class="card-ico">📄</div>Documentos recientes</div>
+        <button class="btn btn-ghost btn-sm" onclick="goS('docs')">Ver todos →</button>
+      </div>
+      <div id="recentDocs"></div>
+    </div>
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t"><div class="card-ico">👥</div>Recordatorios de clientes</div>
+        <button class="btn btn-ghost btn-sm" onclick="goS('clientes')">Ver todos →</button>
+      </div>
+      <div id="reminderList"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ NUEVO PRESUPUESTO ══════════ -->
+  <div class="screen" id="screen-nuevo">
+    <div id="nuevoFreemiumBanner"></div>
+    <div class="wizard" id="wizard">
+      <button class="wz-step wz-on" id="wz0" onclick="goStep(0)"><div class="wz-n">1</div><div class="wz-lbl">Tipo y cliente</div></button>
+      <button class="wz-step" id="wz1" onclick="goStep(1)"><div class="wz-n">2</div><div class="wz-lbl">Ítems</div></button>
+      <button class="wz-step" id="wz2" onclick="goStep(2)"><div class="wz-n">3</div><div class="wz-lbl">Totales</div></button>
+      <button class="wz-step" id="wz3" onclick="goStep(3)"><div class="wz-n">4</div><div class="wz-lbl">Vista previa</div></button>
+    </div>
+
+    <!-- Step 0 -->
+    <div id="step0">
+      <div class="card">
+        <div class="card-h"><div class="card-t"><div class="card-ico">📋</div>Tipo de documento</div></div>
+        <div class="fg fg2">
+          <div class="fgrp"><label>Tipo <span class="req">*</span></label>
+            <select id="docType" onchange="onDTChange()">
+              <option value="presupuesto">📄 Presupuesto</option>
+              <option value="factura">🧾 Factura No Fiscal</option>
+            </select>
+          </div>
+          <div class="fgrp">
+            <label>N° de documento <span style="font-size:.7rem;color:var(--ink3);font-weight:400">(auto)</span></label>
+            <input type="text" id="docNum" placeholder="0001"/>
+          </div>
+        </div>
+        <div class="fg fg3">
+          <div class="fgrp"><label>Fecha de emisión</label><input type="date" id="dateIssue"/></div>
+          <div class="fgrp" id="grpExp"><label>Válido hasta</label><input type="date" id="dateExpiry" onchange="checkExp()"/></div>
+          <div class="fgrp"><label>Fecha del trabajo</label><input type="date" id="dateSvc"/></div>
+        </div>
+        <div id="expWarn" style="display:none"><div class="exp-warn">⚠️ Este presupuesto vence en menos de 3 días o ya expiró.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-h">
+          <div class="card-t"><div class="card-ico">👤</div>Datos del cliente</div>
+          <button class="btn btn-blue-lt btn-sm" onclick="openClientPicker()">📋 Desde catálogo</button>
+        </div>
+        <div class="fg fg2">
+          <div class="fgrp"><label>Nombre / Razón Social <span class="req">*</span></label><input type="text" id="cName" placeholder="Nombre o empresa"/></div>
+          <div class="fgrp"><label>Teléfono / WhatsApp</label><input type="tel" id="cPhone" placeholder="+54 9 11 1234-5678"/></div>
+        </div>
+        <div class="fg fg2">
+          <div class="fgrp"><label>Email</label><input type="email" id="cEmail" placeholder="correo@ejemplo.com"/></div>
+          <div class="fgrp"><label>Dirección</label><input type="text" id="cAddr" placeholder="Calle 1234, Ciudad"/></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end">
+        <button class="btn btn-pri btn-lg" onclick="goStep(1)">Siguiente: Ítems →</button>
+      </div>
+    </div>
+
+    <!-- Step 1 -->
+    <div id="step1" style="display:none">
+      <div class="card">
+        <div class="card-h">
+          <div class="card-t"><div class="card-ico">🔨</div>Ítems del documento</div>
+          <span id="itemCount" style="font-size:.75rem;color:var(--ink3);font-weight:600"></span>
+        </div>
+
+        <!-- Items list -->
+        <div id="itemRows"></div>
+
+        <!-- Add item form -->
+        <div class="add-item-form" id="addRowEl">
+          <div class="ai-desc">
+            <input type="text" id="nIDesc" placeholder="Describí el concepto o servicio…" autocomplete="off"
+              oninput="filterProducts(this.value)" onblur="setTimeout(()=>hideProductDD(),200)"/>
+            <div id="productDD" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);
+              border:1px solid var(--line);border-radius:var(--r-sm);box-shadow:var(--sh-md);z-index:200;
+              max-height:180px;overflow-y:auto"></div>
+          </div>
+          <div class="ai-row">
+            <div class="ai-field">
+              <label>Tipo / Unidad</label>
+              <select id="nIType">
+                <option value="Unidad">Unidad</option>
+                <option value="Hora">Hora</option>
+                <option value="Día">Día</option>
+                <option value="m²">m²</option>
+                <option value="Metro">Metro</option>
+                <option value="kg">kg</option>
+                <option value="Litros">Litros</option>
+                <option value="Rollo">Rollo</option>
+                <option value="Caja">Caja</option>
+                <option value="Global">Global</option>
+              </select>
+            </div>
+            <div class="ai-field">
+              <label>Cantidad</label>
+              <input type="number" id="nIQty" placeholder="1" min="0" step="any"/>
+            </div>
+            <div class="ai-field">
+              <label>Precio unit.</label>
+              <input type="number" id="nIPrice" placeholder="0,00" min="0" step="any"/>
+            </div>
+          </div>
+          <input type="number" id="nIDisc" placeholder="0" min="0" max="100" step="any" style="display:none" title="Descuento %"/>
+          <button class="btn btn-pri add-item-btn" onclick="addItem()" aria-label="Agregar ítem">
+            + Agregar ítem
+          </button>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:10px">
+        <button class="btn btn-sec btn-lg" onclick="goStep(0)">← Atrás</button>
+        <button class="btn btn-pri btn-lg" onclick="goStep(2)">Siguiente: Totales →</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" style="display:none">
+      <div class="card">
+        <div class="card-h"><div class="card-t"><div class="card-ico">💰</div>Ajustes de precio</div></div>
+        <div class="fg fg2">
+          <div class="fgrp"><label>Descuento (%)</label><input type="number" id="discount" placeholder="0" min="0" max="100" oninput="calcTot()"/></div>
+          <div class="fgrp"><label>IVA</label>
+            <select id="ivaRate" onchange="calcTot()">
+              <option value="0">Sin IVA</option>
+              <option value="10.5">10.5% — Reducido</option>
+              <option value="21">21% — General</option>
+            </select>
+          </div>
+        </div>
+        <div class="fgrp"><label>Notas / Condiciones de pago</label><textarea id="docNotes" placeholder="Ej: Seña del 50% para confirmar. Pago restante al finalizar. Garantía 30 días…"></textarea></div>
+      </div>
+      <div class="card">
+        <div class="card-t" style="margin-bottom:14px"><div class="card-ico">📊</div>Resumen de totales</div>
+        <div class="tot-box">
+          <div class="tot-row"><span>Subtotal ítems</span><span class="v" id="tS">$ 0,00</span></div>
+          <div class="tot-row"><span>Descuento</span><span class="v" id="tD" style="color:var(--red)">− $ 0,00</span></div>
+          <div class="tot-row"><span>IVA</span><span class="v" id="tI">$ 0,00</span></div>
+          <div class="tot-row grand"><span>TOTAL</span><span class="v" id="tG">$ 0,00</span></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:10px">
+        <button class="btn btn-sec btn-lg" onclick="goStep(1)">← Atrás</button>
+        <button class="btn btn-pri btn-lg" onclick="goStep(3)">Vista previa →</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" style="display:none">
+      <div class="card" style="text-align:center;padding:40px 22px">
+        <div style="font-size:2.8rem;margin-bottom:12px">📄</div>
+        <div style="font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;margin-bottom:7px">Todo listo para generar</div>
+        <div style="font-size:.87rem;color:var(--ink3);margin-bottom:26px">Revisá la vista previa y luego guardá o enviá el documento</div>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-sec btn-lg" onclick="goStep(2)">← Atrás</button>
+          <button class="btn btn-ghost btn-lg" onclick="openPrev()">👁 Vista previa PDF</button>
+          <button class="btn btn-ok btn-lg" onclick="saveDoc()">💾 Guardar documento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ MIS DOCUMENTOS ══════════ -->
+  <div class="screen" id="screen-docs">
+    <!-- Tabs -->
+    <div class="doc-tabs">
+      <button class="doc-tab on" id="dtPres" onclick="switchDocTab('presupuesto')">
+        📄 Presupuestos <span class="doc-tab-count" id="cntPres">0</span>
+      </button>
+      <button class="doc-tab" id="dtFact" onclick="switchDocTab('factura')">
+        🧾 Facturas <span class="doc-tab-count" id="cntFact">0</span>
+      </button>
+    </div>
+    <!-- Filters -->
+    <div class="filter-bar">
+      <input type="text" id="searchQ" placeholder="🔍 Buscar por cliente o número…" oninput="renderDocs()"/>
+      <div class="filter-group"><label>Desde</label><input type="date" id="fFrom" onchange="renderDocs()" style="width:auto;font-size:.82rem;padding:8px 10px"/></div>
+      <div class="filter-group"><label>Hasta</label><input type="date" id="fTo" onchange="renderDocs()" style="width:auto;font-size:.82rem;padding:8px 10px"/></div>
+      <div class="filter-group"><label>Estado</label>
+        <select id="fSt" onchange="renderDocs()" style="width:140px">
+          <option value="">Todos</option>
+          <option value="pending">⏳ Pendientes</option>
+          <option value="accepted">✓ Aprobados</option>
+          <option value="cobrado">💰 Cobrados</option>
+        </select>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="clearFilters()">✕ Limpiar</button>
+    </div>
+    <div class="doc-list" id="docList"></div>
+  </div>
+
+  <!-- ══════════ CLIENTES ══════════ -->
+  <div class="screen" id="screen-clientes">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">
+      <input type="text" id="cliSearch" placeholder="🔍 Buscar cliente…" style="max-width:280px;flex:1" oninput="renderClients()"/>
+      <button class="btn btn-pri btn-md" onclick="openNewClient()">+ Nuevo cliente</button>
+    </div>
+    <div class="client-grid" id="clientGrid"></div>
+  </div>
+
+  <!-- ══════════ PRODUCTOS / SERVICIOS ══════════ -->
+  <div class="screen" id="screen-productos">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px">
+      <input type="text" id="prodSearch" placeholder="🔍 Buscar producto…" style="max-width:260px;flex:1" oninput="renderProducts()"/>
+      <button class="btn btn-pri btn-md" onclick="openNewProduct()">+ Nuevo producto</button>
+    </div>
+    <div id="productList"></div>
+  </div>
+
+  <!-- ══════════ MI NEGOCIO ══════════ -->
+  <div class="screen" id="screen-negocio">
+    <div class="card">
+      <div class="card-h"><div class="card-t"><div class="card-ico">🏢</div>Datos del negocio</div></div>
+      <div style="display:flex;gap:22px;align-items:flex-start;margin-bottom:22px;flex-wrap:wrap">
+        <div>
+          <div class="logo-drop" id="logoDrop" onclick="document.getElementById('logoFile').click()">
+            <img id="logoPrev" style="display:none"/>
+            <span class="ld-ico" id="ldIco">🖼️</span>
+            <span class="ld-txt" id="ldTxt">Subir logo<br>JPG / PNG</span>
+            <div class="ld-ov">✎ Cambiar</div>
+          </div>
+          <input type="file" id="logoFile" accept="image/*">
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;margin-bottom:6px">Logo del negocio</div>
+          <div style="font-size:.82rem;color:var(--ink3);line-height:1.7">Subí tu logo en JPG o PNG.<br>Se recorta automáticamente al centro en formato cuadrado y se guarda como <strong>PNG</strong>.<br>Aparecerá en todos tus PDF.</div>
+          <div id="logoOK" style="margin-top:8px;font-size:.76rem;color:var(--green);display:none">✓ Logo guardado</div>
+        </div>
+      </div>
+      <div class="hr"><span>Información del negocio</span></div>
+      <div class="fg fg2">
+        <div class="fgrp"><label>Nombre / Razón Social <span class="req">*</span></label><input type="text" id="bzName" placeholder="Mi Empresa SRL"/></div>
+        <div class="fgrp"><label>CUIT / DNI</label><input type="text" id="bzCuit" placeholder="20-12345678-9"/></div>
+      </div>
+      <div class="fg fg2">
+        <div class="fgrp"><label>Teléfono / WhatsApp</label><input type="tel" id="bzPhone" placeholder="+54 9 11 1234-5678"/></div>
+        <div class="fgrp"><label>Email</label><input type="email" id="bzEmail" placeholder="negocio@email.com"/></div>
+      </div>
+      <div class="fg fg2">
+        <div class="fgrp"><label>Dirección</label><input type="text" id="bzAddr" placeholder="Calle 1234, Ciudad"/></div>
+        <div class="fgrp"><label>Condición ante IVA</label>
+          <select id="bzIva"><option>Monotributista</option><option>Responsable Inscripto</option><option>Exento</option><option>Consumidor Final</option></select>
+        </div>
+      </div>
+      <div class="fg fg1" style="margin-bottom:0">
+        <div class="fgrp"><label>Actividad / Rubro</label><input type="text" id="bzRubro" placeholder="Ej: Electricista, Plomería, Construcción…"/></div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-top:16px">
+        <button class="btn btn-pri btn-lg" onclick="saveBiz()">💾 Guardar datos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ CONFIG ══════════ -->
+  <div class="screen" id="screen-config">
+    <div class="card" id="planStatusCard" style="border-left:3px solid var(--primary);cursor:pointer" onclick="openUpgrade()">
+      <div class="card-h" style="margin-bottom:10px">
+        <div class="card-t"><div class="card-ico">💳</div>Mi plan</div>
+        <button class="btn btn-pri btn-sm" onclick="openUpgrade();event.stopPropagation()">Ver planes</button>
+      </div>
+      <div id="planStatusBody" style="font-size:.86rem;color:var(--ink2)">Cargando…</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><div class="card-t"><div class="card-ico">⚙️</div>Configuración general</div></div>
+      <div class="fg fg2">
+        <div class="fgrp"><label>Moneda</label>
+          <select id="cfgCur"><option value="ARS">$ Pesos argentinos (ARS)</option><option value="USD">U$S Dólares (USD)</option><option value="EUR">€ Euros (EUR)</option></select>
+        </div>
+        <div class="fgrp"><label>Validez del presupuesto (días)</label><input type="number" id="cfgExp" value="15" min="1"/></div>
+      </div>
+      <div class="fg fg2">
+        <div class="fgrp"><label>Próximo N° presupuesto</label><input type="number" id="cfgNP" value="1" min="1"/></div>
+        <div class="fgrp"><label>Próximo N° factura</label><input type="number" id="cfgNF" value="1" min="1"/></div>
+      </div>
+      <div class="fgrp" style="margin-bottom:18px"><label>Pie de página en PDF</label><input type="text" id="cfgFoot" placeholder="Ej: Gracias por su confianza. Sujeto a disponibilidad."/></div>
+
+
+
+      <div style="display:flex;justify-content:flex-end"><button class="btn btn-pri btn-lg" onclick="saveCfg()">💾 Guardar</button></div>
+    </div>
+    <!-- BACKUP CARD -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-t" style="margin-bottom:12px"><div class="card-ico">💾</div>Copia de seguridad</div>
+      <p style="font-size:.82rem;color:var(--ink3);margin-bottom:14px;line-height:1.6">
+        Exportá todos tus datos (documentos, clientes, configuración) a un archivo JSON. Guardalo en Drive o enviátelo por WhatsApp. Para restaurar, importá el mismo archivo.
+      </p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-pri btn-md" onclick="exportBackup()" style="flex:1;justify-content:center;min-width:130px">
+          ⬇️ Exportar backup
+        </button>
+        <button class="btn btn-sec btn-md" onclick="el('importFile').click()" style="flex:1;justify-content:center;min-width:130px">
+          ⬆️ Importar backup
+        </button>
+      </div>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="importBackup(event)"/>
+      <div id="backupMsg" style="font-size:.76rem;margin-top:8px;min-height:16px"></div>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--primary)">
+      <div class="card-t" style="margin-bottom:10px"><div class="card-ico">🔮</div>Próximamente</div>
+      <p style="font-size:.86rem;color:var(--ink3);line-height:1.8">
+        <strong style="color:var(--ink2)">Integración ARCA / AFIP</strong> — Factura electrónica oficial.<br>
+        <strong style="color:var(--ink2)">Push notifications</strong> — Recordatorios automáticos de mantenimiento.<br>
+        <strong style="color:var(--ink2)">Multi-usuario / Equipo</strong> — Compartí el acceso con empleados.<br>
+        <strong style="color:var(--ink2)">Estadísticas avanzadas</strong> — Ingresos, clientes top, proyecciones.
+      </p>
+    </div>
+
+    <!-- BACKUP CARD -->
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-t" style="margin-bottom:12px"><div class="card-ico">💾</div>Respaldo de datos</div>
+      <p style="font-size:.82rem;color:var(--ink3);line-height:1.6;margin-bottom:14px">
+        Exporta todos tus documentos, clientes y configuracion a un archivo de respaldo. Importalo en cualquier momento para restaurar tu informacion.
+      </p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-pri btn-md" style="flex:1;min-width:130px;justify-content:center" onclick="exportBackup()">
+          ⬇️ Exportar backup
+        </button>
+        <button class="btn btn-sec btn-md" style="flex:1;min-width:130px;justify-content:center" onclick="document.getElementById('importFileInput').click()">
+          ⬆️ Importar backup
+        </button>
+        <input type="file" id="importFileInput" accept=".json" style="display:none" onchange="importBackup(event)"/>
+      </div>
+      <div id="backupMsg" style="font-size:.76rem;margin-top:8px;min-height:16px"></div>
+    </div>
+
+    <!-- ABOUT / CREATOR CARD -->
+    <div class="card" style="background:linear-gradient(135deg,var(--b900),var(--b700));border:none;color:#fff">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">📋</div>
+        <div>
+          <div style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;color:#fff">PresupuestoPro</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.55)">Hecha con ❤️ para los trabajadores argentinos</div>
+        </div>
+      </div>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:14px">
+        Si te sirve la app, compartila con tus colegas — con cada recomendación ayudás a seguir mejorándola.
+      </p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-md" onclick="contactWA()" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);flex:1;justify-content:center">
+          💬 WhatsApp
+        </button>
+        <button class="btn btn-md" onclick="shareApp()" style="background:rgba(16,185,129,.25);color:#6ee7b7;border:1px solid rgba(16,185,129,.3);flex:1;justify-content:center">
+          🔗 Compartir con un colega
+        </button>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /content -->
+</main>
+</div><!-- /shell -->
+
+<!-- ══════ BOTTOM NAV ══════ -->
+<nav class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bn-item on" id="bn-dashboard" onclick="goS('dashboard')"><span class="bn-ico">🏠</span>Inicio</button>
+    <button class="bn-item" id="bn-nuevo" onclick="goS('nuevo')"><span class="bn-ico">✏️</span>Nuevo</button>
+    <button class="bn-item" id="bn-docs" onclick="goS('docs')"><span class="bn-ico">📄</span>Docs<span class="bn-dot" id="bnBadge">0</span></button>
+    <button class="bn-item" id="bn-clientes" onclick="goS('clientes')"><span class="bn-ico">👥</span>Clientes</button>
+    <button class="bn-item" id="bn-negocio" onclick="goS('negocio')"><span class="bn-ico">🏢</span>Negocio</button>
+  </div>
+</nav>
+
+<!-- ══════ CLIENT MODAL ══════ -->
+<div class="modal-ov" id="clientMod">
+  <div class="modal">
+    <h2 id="clientModTitle">➕ Nuevo cliente</h2>
+    <input type="hidden" id="clientEditId"/>
+    <div class="fg fg2">
+      <div class="fgrp"><label>Nombre / Razón Social <span class="req">*</span></label><input type="text" id="clName" placeholder="Juan García"/></div>
+      <div class="fgrp"><label>Teléfono / WhatsApp</label><input type="tel" id="clPhone" placeholder="+54 9 11 1234-5678"/></div>
+    </div>
+    <div class="fg fg2">
+      <div class="fgrp"><label>Email</label><input type="email" id="clEmail" placeholder="cliente@email.com"/></div>
+      <div class="fgrp"><label>Dirección</label><input type="text" id="clAddr" placeholder="Calle 1234, Ciudad"/></div>
+    </div>
+    <div class="fgrp" style="margin-bottom:12px">
+      <label>Servicios / Etiquetas (separados por coma)</label>
+      <input type="text" id="clTags" placeholder="Ej: Electricidad, Mantenimiento, Plomería"/>
+    </div>
+    <div class="fg fg2">
+      <div class="fgrp">
+        <label>Recordatorio de mantenimiento</label>
+        <select id="clRemType">
+          <option value="">Sin recordatorio</option>
+          <option value="mensual">Mensual</option>
+          <option value="bimestral">Bimestral</option>
+          <option value="trimestral">Trimestral</option>
+          <option value="semestral">Semestral</option>
+          <option value="anual">Anual</option>
+        </select>
+      </div>
+      <div class="fgrp">
+        <label>Próxima fecha de contacto</label>
+        <input type="date" id="clRemDate"/>
+      </div>
+    </div>
+    <div class="fgrp">
+      <label>Notas / Observaciones</label>
+      <textarea id="clNotes" placeholder="Historial de trabajos, preferencias, notas importantes…" style="min-height:66px"></textarea>
+      <div class="fgrp" style="margin-top:10px">
+        <label style="display:flex;align-items:center;gap:6px">
+          🔒 Nota interna <span style="font-size:.71rem;color:var(--ink3);font-weight:400">(privada, nunca aparece en documentos)</span>
+        </label>
+        <textarea id="clInternal" placeholder="Ej: cliente difícil, prefiere pagos en efectivo, descuento especial…" style="min-height:54px"></textarea>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeClientMod()">Cancelar</button>
+      <button class="btn btn-pri btn-md" onclick="saveClient()">💾 Guardar cliente</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ CLIENT PICKER ══════ -->
+<div class="modal-ov" id="pickerMod">
+  <div class="modal" style="max-width:420px">
+    <h2>📋 Seleccionar cliente</h2>
+    <input type="text" id="pickerSearch" placeholder="Buscar…" oninput="renderPicker()" style="margin-bottom:12px"/>
+    <div id="pickerList" style="max-height:320px;overflow-y:auto;display:flex;flex-direction:column;gap:6px"></div>
+    <div class="modal-foot"><button class="btn btn-ghost" onclick="closePicker()">Cerrar</button></div>
+  </div>
+</div>
+
+<!-- ══════ UPGRADE MODAL ══════ -->
+<div class="modal-ov" id="upgradeMod">
+  <div class="modal" style="max-width:640px">
+    <!-- HEADER -->
+    <div style="text-align:center;margin-bottom:18px">
+      <div style="font-size:2rem;margin-bottom:8px">🚀</div>
+      <h2 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:800;margin-bottom:4px" id="upgradeTitle">Desbloqueá PresupuestoPro</h2>
+      <p style="font-size:.82rem;color:var(--ink3)" id="upgradeSubtitle">Elegí el plan que mejor se adapte a vos</p>
+    </div>
+
+    <!-- REFERRAL BANNER -->
+    <div style="background:linear-gradient(135deg,#0a7c4b,#059669);border-radius:var(--r);padding:11px 14px;margin-bottom:14px;display:flex;align-items:center;gap:12px">
+      <div style="font-size:1.4rem;flex-shrink:0">🎁</div>
+      <div>
+        <div style="font-size:.82rem;font-weight:800;color:#fff;margin-bottom:2px">¿Te la recomendó alguien?</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.75);line-height:1.5">Si un colega te pasó la app, pedile su código de recomendación y conseguís <strong style="color:#fff">1 mes gratis</strong>.</div>
+      </div>
+    </div>
+
+    <!-- PLAN GRID -->
+    <div class="plan-grid" id="planGrid"></div>
+
+    <!-- HOW IT WORKS -->
+    <div style="background:var(--b50);border:1px solid var(--b200);border-radius:var(--r);padding:12px 14px;margin-top:12px">
+      <div style="font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);margin-bottom:8px">¿Cómo funciona?</div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="display:flex;align-items:flex-start;gap:9px;font-size:.8rem;color:var(--ink2)">
+          <span style="background:var(--primary);color:#fff;min-width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;margin-top:1px">1</span>
+          <span>Escribinos por WhatsApp y elegí tu plan. Te respondemos al instante.</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:9px;font-size:.8rem;color:var(--ink2)">
+          <span style="background:var(--primary);color:#fff;min-width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;margin-top:1px">2</span>
+          <span>Pagás por MercadoPago y recibís el <strong>código de activación</strong> al instante.</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:9px;font-size:.8rem;color:var(--ink2)">
+          <span style="background:var(--primary);color:#fff;min-width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;margin-top:1px">3</span>
+          <span>Ingresás el código acá abajo y queda activo al instante.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT BUTTONS -->
+    <div style="margin-top:12px">
+      <button class="btn btn-ok btn-md" style="width:100%;justify-content:center" onclick="contactWA()">
+        💬 Contactar por WhatsApp
+      </button>
+    </div>
+
+    <!-- ACTIVATION CODE INPUT -->
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line)">
+      <div style="font-size:.72rem;font-weight:800;color:var(--ink2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">¿Ya tenés tu código?</div>
+      <div style="display:flex;gap:8px">
+        <input type="text" id="activationInput" placeholder="Ej: XXXX0000"
+          style="flex:1;text-transform:uppercase;font-weight:700;letter-spacing:.1em;font-size:.95rem"
+          oninput="this.value=this.value.toUpperCase()"
+          onkeydown="if(event.key==='Enter') activateCode()"/>
+        <button class="btn btn-pri btn-md" onclick="activateCode()">✓ Activar</button>
+      </div>
+      <div id="activationMsg" style="font-size:.76rem;margin-top:6px;min-height:18px"></div>
+    </div>
+
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeUpgrade()">Ahora no</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SHARE MODAL ══════ -->
+<div class="modal-ov" id="shareMod">
+  <div class="modal" style="max-width:420px">
+    <h2>📤 Enviar documento</h2>
+
+    <!-- STEP 1: Download PDF first -->
+    <div id="shareStep1">
+      <div style="background:var(--b50);border:1px solid var(--b200);border-radius:var(--r);padding:14px 16px;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <div style="background:var(--primary);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0">1</div>
+          <div style="font-size:.88rem;font-weight:700;color:var(--ink)">Primero descargá el PDF</div>
+        </div>
+        <div style="font-size:.8rem;color:var(--ink3);line-height:1.65;margin-bottom:12px">
+          El PDF se guarda en tu dispositivo. Luego lo adjuntás desde WhatsApp o Email como cualquier archivo.
+        </div>
+        <button class="btn btn-pri btn-md" style="width:100%;justify-content:center" onclick="dlPDFAndContinue()">
+          ⬇️ Descargar PDF ahora
+        </button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <div style="background:var(--primary);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0">2</div>
+        <div style="font-size:.88rem;font-weight:700;color:var(--ink)">Envialo por donde prefieras</div>
+      </div>
+
+      <div class="share-opts">
+        <div class="share-opt" onclick="sendWA()">
+          <div class="share-opt-ico">💬</div>
+          <div class="share-opt-txt">
+            <strong>WhatsApp</strong>
+            <span>Abre el chat · adjuntá el PDF descargado</span>
+          </div>
+          <span style="font-size:.7rem;background:var(--b100);color:var(--primary);padding:3px 8px;border-radius:20px;font-weight:700;white-space:nowrap">📎 + PDF</span>
+        </div>
+        <div class="share-opt" onclick="sendMail()">
+          <div class="share-opt-ico">📧</div>
+          <div class="share-opt-txt">
+            <strong>Email</strong>
+            <span>Abre el correo · adjuntá el PDF descargado</span>
+          </div>
+          <span style="font-size:.7rem;background:var(--b100);color:var(--primary);padding:3px 8px;border-radius:20px;font-weight:700;white-space:nowrap">📎 + PDF</span>
+        </div>
+        <div class="share-opt" id="nativeShareOpt" style="display:none" onclick="nativeShare()">
+          <div class="share-opt-ico">📱</div>
+          <div class="share-opt-txt">
+            <strong>Compartir archivo PDF</strong>
+            <span>Compartí el PDF directo desde tu celular</span>
+          </div>
+          <span style="font-size:.7rem;background:var(--green-lt);color:var(--green);padding:3px 8px;border-radius:20px;font-weight:700;white-space:nowrap">Adjunta solo</span>
+        </div>
+      </div>
+
+      <!-- Tip after download -->
+      <div id="shareTip" style="display:none;margin-top:12px;background:var(--green-lt);border:1px solid #6ee7b7;border-radius:var(--r-sm);padding:10px 13px;font-size:.8rem;color:var(--green);line-height:1.65">
+        ✅ <strong>PDF descargado.</strong> Ahora abrí WhatsApp, buscá al cliente, tocá el clip 📎 y elegí el PDF desde tus descargas.
+      </div>
+    </div>
+
+    <div class="modal-foot"><button class="btn btn-ghost" onclick="closeShare()">Cerrar</button></div>
+  </div>
+</div>
+
+<!-- ══════ PDF OVERLAY ══════ -->
+<div class="pdf-ov" id="pdfOv">
+  <div class="pdf-wrap" id="pdfWrap">
+    <div class="pdf-bar">
+      <span class="pdf-bar-lbl" id="pdfLbl">Documento</span>
+      <button class="btn btn-sec btn-sm" onclick="openShare()">📤 Enviar</button>
+      <button class="btn btn-pri btn-sm" onclick="dlPDF()">⬇️ PDF</button>
+      <button class="btn btn-ghost btn-sm" onclick="closePrev()" style="color:rgba(255,255,255,.6)">✕</button>
+    </div>
+    <div class="pdf-content" id="pdfContent"></div>
+  </div>
+</div>
+
+<!-- ══════ TOAST ══════ -->
+<div class="toast" id="toast">
+  <div class="toast-dot td-inf" id="tdot"></div>
+  <span id="tmsg"></span>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+//  FREEMIUM CONFIG
+// ═══════════════════════════════════════
+// ── URL pública de la app (actualizar cuando esté publicada en GitHub Pages) ──
+var APP_URL = 'https://lautaroantunez-cloud.github.io/presupuestopro';
+
+const FREE_LIMITS = {
+  docsPerMonth: 50,
+  clients: 50,
+  pdfWatermark: true,
+};
+// ── PAYMENT LINKS — configurá en Ajustes → MercadoPago ─────────────────────
+const MP_LINKS = {
+  monthly:  'TU_LINK_MENSUAL',
+  lifetime: 'TU_LINK_UNICO',
+};
+const ACTIVATION_CODES = {
+  monthly:  'MESPRO',
+  lifetime: 'VITALPRO',
+};
+
+const PLANS = [
+  {
+    id: 'free',
+    name: 'Gratis',
+    price: '$0',
+    period: 'para siempre',
+    desc: 'Para empezar',
+    featured: false,
+    features: [
+      { ok: true,  text: '50 documentos por mes' },
+      { ok: true,  text: '50 clientes' },
+      { ok: true,  text: 'PDF con marca de agua' },
+      { ok: false, text: 'Recordatorios de clientes' },
+      { ok: false, text: 'PDF sin marca de agua' },
+      { ok: false, text: 'Documentos ilimitados' },
+    ],
+    btnLabel: 'Plan actual',
+    btnClass: 'btn-sec',
+    btnDisabled: true,
+  },
+  {
+    id: 'monthly',
+    name: 'Pro Mensual',
+    price: '$ 3.500',
+    period: 'ARS / mes',
+    desc: '\u2248 $2.000 ARS · Cancelás cuando querés',
+    featured: true,
+    features: [
+      { ok: true, text: 'Documentos ilimitados' },
+      { ok: true, text: 'Clientes ilimitados' },
+      { ok: true, text: 'PDF sin marca de agua' },
+      { ok: true, text: 'Recordatorios de clientes' },
+      { ok: true, text: 'Soporte prioritario' },
+    ],
+    btnLabel: '💙 Pagar con MercadoPago',
+    btnClass: 'btn-pri',
+    btnDisabled: false,
+  },
+  {
+    id: 'lifetime',
+    name: 'Pro Vitalicio',
+    price: '$ 50.000',
+    period: 'ARS / pago único',
+    desc: '\u2248 $10.000 ARS · Una vez, para siempre',
+    featured: false,
+    features: [
+      { ok: true, text: 'Todo lo del plan mensual' },
+      { ok: true, text: 'Acceso de por vida' },
+      { ok: true, text: 'Sin pagos futuros' },
+      { ok: true, text: 'Actualizaciones incluidas' },
+      { ok: true, text: 'Lo mejor del mercado LATAM' },
+    ],
+    btnLabel: '💎 Pagar con MercadoPago',
+    btnClass: 'btn-ok',
+    btnDisabled: false,
+  },
+];
+
+// ═══════════════════════════════════════
+//  FIREBASE INIT
+// ═══════════════════════════════════════
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCUikZ1NPA7FfOKUM-IeTYvCUdE1BWpvZs",
+  authDomain: "presupuestopro-d4bd2.firebaseapp.com",
+  projectId: "presupuestopro-d4bd2",
+  storageBucket: "presupuestopro-d4bd2.firebasestorage.app",
+  messagingSenderId: "817253813978",
+  appId: "1:817253813978:web:e7c97a5be660af547f9fe3"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db   = firebase.firestore();
+
+// Enable offline persistence — app works without internet
+db.enablePersistence({ synchronizeTabs: true }).catch(() => {});
+
+var fbUID    = null;  // anonymous Firebase user ID
+var fbReady  = false; // true once auth + initial load complete
+var _syncTimer = null;
+
+// ═══════════════════════════════════════
+//  STATE — kept in memory, synced to Firebase + localStorage fallback
+// ═══════════════════════════════════════
+let items    = [];
+let products = JSON.parse(localStorage.getItem('pp4_products') || '[]');
+let docs     = JSON.parse(ls('pp4_docs')    || '[]');
+let clients  = JSON.parse(ls('pp4_clients') || '[]');
+let biz      = JSON.parse(ls('pp4_biz')     || '{}');
+let cfg      = JSON.parse(ls('pp4_cfg')     || '{"currency":"ARS","expiry":15,"nextP":1,"nextF":1,"footer":""}');
+let logoURL  = localStorage.getItem('pp4_logo') || null;
+let curDoc   = null;
+let curDocTab = 'presupuesto';
+
+// Version salt
+var PRO_VERSION = 'v1';
+if (localStorage.getItem('pp4_pro_v') !== PRO_VERSION) {
+  localStorage.removeItem('pp4_pro');
+  localStorage.setItem('pp4_pro_v', PRO_VERSION);
+}
+// Clear stale install flags in browser mode
+(function() {
+  var isStandalone = window.navigator.standalone === true ||
+                     window.matchMedia('(display-mode: standalone)').matches;
+  if (!isStandalone) {
+    localStorage.removeItem('pp4_install_done');
+    localStorage.removeItem('pp4_install_nodshow');
+  }
+})();
+let proStatus = localStorage.getItem('pp4_pro') || 'free';
+
+// Creation counter
+let docsCreatedLog = JSON.parse(localStorage.getItem('pp4_dlog') || '{}');
+
+function monthKey() {
+  const n = new Date();
+  return n.getFullYear() + '-' + String(n.getMonth() + 1).padStart(2, '0');
+}
+function createdThisMonth() {
+  return docsCreatedLog[monthKey()] || 0;
+}
+function incrementCreatedLog() {
+  const k = monthKey();
+  docsCreatedLog[k] = (docsCreatedLog[k] || 0) + 1;
+  localStorage.setItem('pp4_dlog', JSON.stringify(docsCreatedLog));
+}
+
+// ═══════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
+  initFirebase(); // anonymous auth + cloud load
+  initSplash();
+  initForm();
+  loadBizFields();
+  loadCfgFields();
+  if (logoURL) applyLogo(logoURL);
+  updateSidebar();
+  updateBadges();
+  updateStats();
+  updateDashWelcome();
+  renderRecent();
+  renderReminders();
+  renderDocs();
+  renderClients();
+  renderFreemiumBanner();
+
+  el('logoFile').addEventListener('change', handleLogo);
+
+  // Enter key on add item
+  ['nIDesc','nIQty','nIPrice'].forEach(id =>
+    el(id).addEventListener('keydown', e => { if (e.key === 'Enter') addItem(); })
+  );
+
+  // Close modals on overlay click
+  ['clientMod','pickerMod','shareMod','pdfOv','upgradeMod','welcomeMod','iosMod'].forEach(id => {
+    el(id).addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('on');
+      }
+    });
+  });
+});
+
+// ═══════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════
+const pageMeta = {
+  dashboard: { t: 'Inicio', s: 'Resumen de tu actividad' },
+  nuevo:     { t: 'Nuevo documento', s: 'Creá paso a paso' },
+  docs:      { t: 'Mis documentos', s: 'Presupuestos y facturas' },
+  clientes:  { t: 'Catálogo de clientes', s: 'Recordatorios y seguimiento' },
+  negocio:   { t: 'Mi negocio', s: 'Logo y datos del PDF' },
+  config:    { t: 'Configuración', s: 'Preferencias del sistema' },
+  productos:  { t: 'Productos y Servicios', s: 'Catálogo con precios' },
+};
+
+function goS(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('on'));
+  el('screen-' + name).classList.add('on');
+
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on'));
+  const navMap = { dashboard: 0, nuevo: 1, docs: 2, clientes: 3, negocio: 4, config: 5 };
+  document.querySelectorAll('.nav-btn')[navMap[name]]?.classList.add('on');
+
+  document.querySelectorAll('.bn-item').forEach(b => b.classList.remove('on'));
+  const bnNames = ['dashboard','nuevo','docs','clientes','negocio'];
+  bnNames.forEach(n => { if (n === name) el('bn-'+n)?.classList.add('on'); });
+
+  const m = pageMeta[name] || {};
+  el('tbTitle').textContent  = m.t || '';
+  el('tbSub').textContent    = m.s || '';
+  el('mobTitle').textContent = m.t || '';
+
+  if (name === 'docs')      { renderDocs(); }
+  if (name === 'productos') { renderProducts(); }
+  if (name === 'clientes') { renderClients(); }
+  if (name === 'dashboard') { updateStats(); updateDashWelcome(); renderRecent(); renderReminders(); renderFreemiumBanner(); }
+  if (name === 'nuevo')    { renderFreemiumBanner(); }
+  if (name === 'config')   { renderFreemiumBanner(); }
+  closeSB();
+}
+
+function toggleSB() {
+  el('sidebar').classList.toggle('open');
+  el('sbBack').classList.toggle('on');
+}
+function closeSB() {
+  el('sidebar').classList.remove('open');
+  el('sbBack').classList.remove('on');
+}
+
+// ═══════════════════════════════════════
+//  WIZARD
+// ═══════════════════════════════════════
+function goStep(n) {
+  for (let i = 0; i <= 3; i++) {
+    el('step' + i).style.display = i === n ? 'block' : 'none';
+    const b = el('wz' + i);
+    b.className = 'wz-step';
+    if (i === n)     b.classList.add('wz-on');
+    else if (i < n)  b.classList.add('wz-done');
+    b.querySelector('.wz-n').textContent = i < n ? '✓' : i + 1;
+  }
+  if (n >= 2) calcTot();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════
+//  FORM
+// ═══════════════════════════════════════
+function initForm() {
+  el('dateIssue').value = toISO(new Date());
+  const exp = new Date(); exp.setDate(exp.getDate() + (cfg.expiry || 15));
+  el('dateExpiry').value = toISO(exp);
+  el('docNum').value = padN(cfg.nextP || 1);
+}
+
+function onDTChange() {
+  const t = gv('docType');
+  el('grpExp').style.display = t === 'presupuesto' ? '' : 'none';
+  el('docNum').value = t === 'presupuesto' ? padN(cfg.nextP || 1) : padN(cfg.nextF || 1);
+}
+
+function checkExp() {
+  const v = gv('dateExpiry');
+  const diff = v ? Math.ceil((new Date(v) - new Date()) / 86400000) : 99;
+  el('expWarn').style.display = diff <= 3 ? '' : 'none';
+}
+
+// ═══════════════════════════════════════
+//  LOGO
+// ═══════════════════════════════════════
+function handleLogo(e) {
+  const file = e.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = new Image();
+    img.onload = () => {
+      const c = document.createElement('canvas'); const sz = 320;
+      c.width = sz; c.height = sz;
+      const ctx = c.getContext('2d');
+      const min = Math.min(img.width, img.height);
+      ctx.drawImage(img, (img.width - min) / 2, (img.height - min) / 2, min, min, 0, 0, sz, sz);
+      logoURL = c.toDataURL('image/png');
+      localStorage.setItem('pp4_logo', logoURL);
+      applyLogo(logoURL);
+      toast('✓ Logo guardado como PNG', 'ok');
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function applyLogo(url) {
+  const img = el('logoPrev'); img.src = url; img.style.display = 'block';
+  el('ldIco').style.display = 'none'; el('ldTxt').style.display = 'none';
+  el('logoOK').style.display = '';
+  el('sbAvatar').innerHTML = `<img src="${url}" style="width:100%;height:100%;object-fit:cover;border-radius:9px">`;
+}
+
+// ═══════════════════════════════════════
+//  ITEMS (unified)
+// ═══════════════════════════════════════
+function renderItems() {
+  const cont = el('itemRows'); if (!cont) return;
+  const sym = csym(), f = fmt;
+
+  // Update count label
+  const countEl = el('itemCount');
+  if (countEl) countEl.textContent = items.length ? items.length + (items.length === 1 ? ' ítem' : ' ítems') : '';
+
+  if (!items.length) { cont.innerHTML = ''; return; }
+
+  function lineTotal(it) {
+    const gross = it.qty * it.price;
+    return gross - gross * (it.disc || 0) / 100;
+  }
+
+  cont.innerHTML = items.map((it, i) => `
+    <div class="item-card">
+      <button class="item-card-del" onclick="items.splice(${i},1);renderItems();calcTot()" aria-label="Eliminar ítem">✕</button>
+      <div class="item-card-desc">
+        <input type="text" value="${esc(it.desc)}" placeholder="Concepto…"
+          oninput="items[${i}].desc=this.value" aria-label="Concepto"/>
+      </div>
+      <div class="item-card-row">
+        <div class="item-card-field">
+          <label>Tipo</label>
+          <select onchange="items[${i}].type=this.value">
+            ${['Unidad','Hora','Día','m²','Metro','kg','Litros','Rollo','Caja','Global'].map(u =>
+              `<option${it.type===u?' selected':''}>${u}</option>`).join('')}
+          </select>
+        </div>
+        <div class="item-card-field">
+          <label>Cantidad</label>
+          <input type="number" value="${it.qty}" min="0" step="any"
+            oninput="items[${i}].qty=+this.value||0;calcTot()" aria-label="Cantidad"/>
+        </div>
+        <div class="item-card-field">
+          <label>Precio unit.</label>
+          <input type="number" value="${it.price}" min="0" step="any"
+            oninput="items[${i}].price=+this.value||0;calcTot()" aria-label="Precio"/>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:6px;border-top:1px solid var(--line2)">
+        <span style="font-size:.75rem;color:var(--ink3)">${it.type} × ${it.qty}</span>
+        <span style="font-size:.9rem;font-weight:800;color:var(--primary)">${sym} ${f(lineTotal(it))}</span>
+      </div>
+      ${it.disc ? `<div style="font-size:.7rem;color:var(--ink3);text-align:right;margin-top:2px">Dto. ${it.disc}%</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function addItem() {
+  const desc = gv('nIDesc');
+  if (!desc) { toast('Escribí el concepto', 'err'); el('nIDesc').focus(); return; }
+  items.push({ desc, type: gv('nIType'), qty: +gv('nIQty') || 1, price: +gv('nIPrice') || 0, disc: +gv('nIDisc') || 0 });
+  clr('nIDesc', 'nIQty', 'nIPrice', 'nIDisc');
+  renderItems(); calcTot();
+  el('nIDesc').focus();
+}
+
+// ═══════════════════════════════════════
+//  TOTALS
+// ═══════════════════════════════════════
+function calcTot() {
+  const sub  = items.reduce((a, it) => a + it.qty * it.price, 0);
+  const disc = (+gv('discount') || 0) / 100;
+  const iva  = (+gv('ivaRate')  || 0) / 100;
+  const dA   = sub * disc;
+  const after= sub - dA;
+  const iA   = after * iva;
+  const grand= after + iA;
+  const sym  = csym(), f = fmt;
+  el('tS').textContent = sym + ' ' + f(sub);
+  el('tD').textContent = '− ' + sym + ' ' + f(dA);
+  el('tI').textContent = sym + ' ' + f(iA);
+  el('tG').textContent = sym + ' ' + f(grand);
+}
+
+// ═══════════════════════════════════════
+//  SAVE DOC  (with freemium gate)
+// ═══════════════════════════════════════
+// editingDocId holds the id of the doc being edited (null = new doc)
+let editingDocId = null;
+
+function saveDoc() {
+  if (!items.length) { toast('Agregá al menos un ítem', 'err'); return; }
+
+  if (editingDocId !== null) {
+    // ── UPDATE EXISTING ──────────────────────────────
+    const idx = docs.findIndex(x => x.id == editingDocId);
+    if (idx === -1) { toast('Documento no encontrado', 'err'); return; }
+    const old = docs[idx];
+    docs[idx] = {
+      ...old,
+      num: gv('docNum'),
+      clientName: gv('cName'), clientPhone: gv('cPhone'),
+      clientEmail: gv('cEmail'), clientAddr: gv('cAddr'),
+      dateIssue: gv('dateIssue'), dateExpiry: gv('dateExpiry'),
+      dateService: gv('dateSvc'),
+      items: JSON.parse(JSON.stringify(items)),
+      notes: gv('docNotes'),
+      discount: +gv('discount') || 0,
+      ivaRate: +gv('ivaRate') || 0,
+      updatedAt: new Date().toISOString(),
+    };
+    persist();
+    toast('✓ Documento actualizado', 'ok');
+    editingDocId = null;
+    resetForm();
+    goS('docs');
+    return;
+  }
+
+  // ── CREATE NEW ───────────────────────────────────
+  if (!isPro()) {
+    if (createdThisMonth() >= FREE_LIMITS.docsPerMonth) {
+      openUpgrade(
+        '📄 Límite del plan gratuito alcanzado',
+        `Creaste ${FREE_LIMITS.docsPerMonth} documentos este mes. Actualizá a Pro para tener documentos ilimitados.`
+      );
+      return;
+    }
+  }
+  const type = gv('docType');
+  const doc = {
+    id: Date.now(), type,
+    num: gv('docNum'),
+    clientName: gv('cName'), clientPhone: gv('cPhone'),
+    clientEmail: gv('cEmail'), clientAddr: gv('cAddr'),
+    dateIssue: gv('dateIssue'), dateExpiry: gv('dateExpiry'),
+    dateService: gv('dateSvc'),
+    items: JSON.parse(JSON.stringify(items)),
+    notes: gv('docNotes'),
+    discount: +gv('discount') || 0,
+    ivaRate: +gv('ivaRate') || 0,
+    status: 'pending',
+    history: [{ status: 'pending', at: new Date().toISOString(), note: 'Documento creado' }],
+    createdAt: new Date().toISOString(),
+  };
+  docs.push(doc);
+  if (type === 'presupuesto') cfg.nextP = (cfg.nextP || 1) + 1;
+  else cfg.nextF = (cfg.nextF || 1) + 1;
+  incrementCreatedLog();
+  persist();
+  toast('✓ Documento guardado', 'ok');
+  resetForm();
+  goS('docs');
+  // Soft warning at 80% of limit
+  const used = createdThisMonth();
+  if (!isPro() && used >= Math.floor(FREE_LIMITS.docsPerMonth * 0.8) && used < FREE_LIMITS.docsPerMonth) {
+    setTimeout(() => toast('Usaste ' + used + '/' + FREE_LIMITS.docsPerMonth + ' docs del mes. Considerá Pro.', 'inf'), 1200);
+  }
+}
+
+function editDoc(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  editingDocId = id;
+  goS('nuevo');
+  // Populate form
+  el('docType').value     = d.type;
+  el('docNum').value      = d.num || '';
+  el('cName').value       = d.clientName || '';
+  el('cPhone').value      = d.clientPhone || '';
+  el('cEmail').value      = d.clientEmail || '';
+  el('cAddr').value       = d.clientAddr  || '';
+  el('dateIssue').value   = d.dateIssue   || '';
+  el('dateExpiry').value  = d.dateExpiry  || '';
+  el('dateSvc').value     = d.dateService || '';
+  el('docNotes').value    = d.notes       || '';
+  el('discount').value    = d.discount    || '';
+  el('ivaRate').value     = d.ivaRate     || '0';
+  items = JSON.parse(JSON.stringify(d.items));
+  onDTChange();
+  renderItems();
+  goStep(0);
+  // Update save button label
+  const btn = document.querySelector('#screen-nuevo .btn-ok.btn-lg');
+  if (btn) btn.textContent = '💾 Actualizar documento';
+  toast('Editando: ' + (d.clientName || 'documento'), 'inf');
+}
+
+function dupDoc(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  if (!isPro() && createdThisMonth() >= FREE_LIMITS.docsPerMonth) {
+    openUpgrade('📄 Límite alcanzado', 'Actualizá a Pro para documentos ilimitados.'); return;
+  }
+  const type = d.type;
+  const dup = {
+    ...JSON.parse(JSON.stringify(d)),
+    id: Date.now(),
+    num: type === 'presupuesto' ? padN(cfg.nextP || 1) : padN(cfg.nextF || 1),
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+    updatedAt: undefined,
+    dateIssue: new Date().toISOString().slice(0,10),
+  };
+  docs.push(dup);
+  if (type === 'presupuesto') cfg.nextP = (cfg.nextP || 1) + 1;
+  else cfg.nextF = (cfg.nextF || 1) + 1;
+  incrementCreatedLog();
+  persist(); renderDocs(); updateStats();
+  toast('⧉ Documento duplicado', 'ok');
+}
+
+function resetForm() {
+  items = [];
+  editingDocId = null;
+  renderItems();
+  ['cName','cPhone','cEmail','cAddr','docNotes','discount'].forEach(id => el(id).value = '');
+  el('ivaRate').value = '0';
+  const btn = document.querySelector('#screen-nuevo .btn-ok.btn-lg');
+  if (btn) btn.textContent = '💾 Guardar documento';
+  initForm(); goStep(0);
+}
+
+// ═══════════════════════════════════════
+//  DOC TAB
+// ═══════════════════════════════════════
+function switchDocTab(type) {
+  curDocTab = type;
+  el('dtPres').classList.toggle('on', type === 'presupuesto');
+  el('dtFact').classList.toggle('on', type === 'factura');
+  renderDocs();
+}
+
+function clearFilters() {
+  el('searchQ').value = '';
+  el('fFrom').value = '';
+  el('fTo').value = '';
+  el('fSt').value = '';
+  renderDocs();
+}
+
+function renderDocs() {
+  // Update tab counts
+  el('cntPres').textContent = docs.filter(d => d.type === 'presupuesto').length;
+  el('cntFact').textContent = docs.filter(d => d.type === 'factura').length;
+  updateBadges();
+
+  const q  = (gv('searchQ') || '').toLowerCase();
+  const fF = gv('fFrom');
+  const fT = gv('fTo');
+  const fs = gv('fSt');
+
+  let list = docs.filter(d => {
+    if (d.type !== curDocTab) return false;
+    if (q && !(d.clientName||'').toLowerCase().includes(q) && !d.num.includes(q)) return false;
+    if (fF && d.dateIssue < fF) return false;
+    if (fT && d.dateIssue > fT) return false;
+    if (fs && d.status !== fs) return false;
+    return true;
+  }).slice().reverse();
+
+  const cont = el('docList');
+  if (!list.length) {
+    cont.innerHTML = `<div class="empty-state"><div class="ei">${curDocTab==='presupuesto'?'📄':'🧾'}</div><h3>Sin ${curDocTab==='presupuesto'?'presupuestos':'facturas'}</h3><p>No hay documentos que coincidan con los filtros</p></div>`;
+    return;
+  }
+
+  const sym = csym(), f = fmt;
+  cont.innerHTML = list.map(d => {
+    const tot = docTot(d), icon = d.type === 'presupuesto' ? '📄' : '🧾';
+    const isPres = d.type === 'presupuesto';
+    return `<div class="doc-card">
+      <div class="doc-card-top">
+        <div class="doc-ico ${isPres ? 'pres' : 'fact'}">${icon}</div>
+        <div class="doc-inf">
+          <h3>${esc(d.clientName)||'Sin nombre'} <span style="font-size:.74rem;color:var(--ink3);font-weight:400">#${d.num}</span></h3>
+          <p>${fmtDate(d.dateIssue)}${d.dateExpiry && isPres ? ' · Vence: '+fmtDate(d.dateExpiry):''}</p>
+        </div>
+        <div class="doc-tot">${sym} ${f(tot)}</div>
+      </div>
+      <div class="doc-card-bottom">
+        <div>${chipSt(d)}</div>
+        <div class="doc-acts">
+          <button class="btn btn-sec btn-sq" onclick="prevDoc(${d.id})" title="Ver PDF" aria-label="Ver PDF">👁</button>
+          ${isPres
+            ? `<button class="btn btn-ok btn-sq" onclick="aprobarPresupuesto(${d.id})" title="Aprobar" aria-label="Aprobar presupuesto">✓</button>`
+            : `<button class="btn ${docBtnCobrado(d)} btn-sq" onclick="toggleCobrado(${d.id})" title="Cobrado" aria-label="Marcar cobrado">💰</button>`
+          }
+          <button class="btn btn-blue-lt btn-sq" onclick="editDoc(${d.id})" title="Editar" aria-label="Editar">✏️</button>
+          <button class="btn btn-blue-lt btn-sq" onclick="dupDoc(${d.id})" title="Duplicar" aria-label="Duplicar">⧉</button>
+          <button class="btn btn-del btn-sq" onclick="delDoc(${d.id})" title="Eliminar" aria-label="Eliminar">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function aprobarPresupuesto(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  showSignModal(id);
+}
+
+function showSignModal(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  // Remove existing
+  const old = document.getElementById('signModalOv'); if (old) old.remove();
+  const ov = document.createElement('div');
+  ov.id = 'signModalOv';
+  ov.className = 'modal-ov on';
+  ov.innerHTML = `
+    <div class="modal" style="max-width:400px">
+      <h2 style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:800;margin-bottom:4px">Aprobar presupuesto</h2>
+      <p style="font-size:.8rem;color:var(--ink3);margin-bottom:14px">Cliente: <strong>${esc(d.clientName)||'Sin nombre'}</strong> · #${d.num}</p>
+      <div style="font-size:.75rem;font-weight:700;color:var(--ink2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Firma del cliente (opcional)</div>
+      <canvas id="signCanvas" width="340" height="120" style="width:100%;border:1.5px solid var(--line);border-radius:var(--r-sm);background:#fafcff;touch-action:none;cursor:crosshair"></canvas>
+      <div style="display:flex;gap:8px;margin-top:6px;margin-bottom:16px">
+        <button class="btn btn-ghost btn-sm" onclick="clearSign()">Limpiar firma</button>
+        <span style="font-size:.72rem;color:var(--ink3);align-self:center">Dibujá con el dedo o el mouse</span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-ok btn-lg" style="flex:1;justify-content:center" onclick="confirmAprobar(${id})">✓ Aprobar y facturar</button>
+        <button class="btn btn-ghost btn-md" onclick="closeSignModal()">Cancelar</button>
+      </div>
+    </div>`;
+  document.body.appendChild(ov);
+  initSignCanvas();
+}
+
+var _signData = null;
+function initSignCanvas() {
+  const canvas = document.getElementById('signCanvas'); if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  ctx.strokeStyle = '#0f2d6e'; ctx.lineWidth = 2.5; ctx.lineCap = 'round';
+  let drawing = false, lastX = 0, lastY = 0;
+  function getPos(e) {
+    const r = canvas.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return [(src.clientX - r.left) * (canvas.width / r.width),
+            (src.clientY - r.top)  * (canvas.height / r.height)];
+  }
+  canvas.addEventListener('mousedown',  e => { drawing=true; [lastX,lastY]=getPos(e); });
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); drawing=true; [lastX,lastY]=getPos(e); }, {passive:false});
+  canvas.addEventListener('mousemove',  e => { if (!drawing) return; const [x,y]=getPos(e); ctx.beginPath(); ctx.moveTo(lastX,lastY); ctx.lineTo(x,y); ctx.stroke(); [lastX,lastY]=[x,y]; });
+  canvas.addEventListener('touchmove',  e => { e.preventDefault(); if (!drawing) return; const [x,y]=getPos(e); ctx.beginPath(); ctx.moveTo(lastX,lastY); ctx.lineTo(x,y); ctx.stroke(); [lastX,lastY]=[x,y]; }, {passive:false});
+  canvas.addEventListener('mouseup',   () => { drawing=false; _signData=canvas.toDataURL(); });
+  canvas.addEventListener('touchend',  () => { drawing=false; _signData=canvas.toDataURL(); });
+}
+function closeSignModal() {
+  var m = document.getElementById('signModalOv'); if (m) m.remove();
+}
+function clearSign() {
+  const canvas = document.getElementById('signCanvas'); if (!canvas) return;
+  canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+  _signData = null;
+}
+
+function confirmAprobar(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  document.getElementById('signModalOv')?.remove();
+  if (_signData) d.signatureData = _signData;
+  _signData = null;
+  // Create invoice from presupuesto
+  const inv = JSON.parse(JSON.stringify(d));
+  inv.id        = Date.now();
+  inv.type      = 'factura';
+  inv.num       = padN(cfg.nextF || 1);
+  inv.status    = 'accepted';
+  inv.createdAt = new Date().toISOString();
+  inv.fromPresupuesto = d.num;
+  cfg.nextF = (cfg.nextF || 1) + 1;
+  docs.push(inv);
+  if (d.clientName && d.clientName.trim()) autoAddClient(d);
+  const idx = docs.findIndex(x => x.id == id);
+  if (idx !== -1) docs.splice(idx, 1);
+  persist(); renderDocs(); updateStats();
+  toast('✓ Aprobado · Factura #' + inv.num + ' creada', 'ok');
+}
+
+function toggleCobrado(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  const newStatus = d.status === 'cobrado' ? 'accepted' : 'cobrado';
+  d.status = newStatus;
+  if (!d.history) d.history = [];
+  d.history.push({ status: newStatus, at: new Date().toISOString() });
+  persist(); renderDocs(); updateStats();
+  toast(d.status === 'cobrado' ? '💰 Marcado como cobrado' : 'Desmarcado como cobrado', 'ok');
+}
+
+function autoAddClient(d) {
+  const name = (d.clientName || '').trim();
+  if (!name) return;
+  // Check if already exists (by name, case-insensitive)
+  const exists = clients.find(c => (c.name || '').toLowerCase() === name.toLowerCase());
+  if (exists) {
+    // Silently update any missing fields
+    let updated = false;
+    if (!exists.phone && d.clientPhone) { exists.phone = d.clientPhone; updated = true; }
+    if (!exists.email && d.clientEmail) { exists.email = d.clientEmail; updated = true; }
+    if (!exists.addr  && d.clientAddr)  { exists.addr  = d.clientAddr;  updated = true; }
+    if (updated) {
+      localStorage.setItem('pp4_clients', JSON.stringify(clients));
+      toast('👤 Datos del cliente actualizados en el catálogo', 'inf');
+    }
+    return;
+  }
+  // New client — build from doc data
+  clients.push({
+    id:      Date.now(),
+    name:    name,
+    phone:   d.clientPhone || '',
+    email:   d.clientEmail || '',
+    addr:    d.clientAddr  || '',
+    tags:    biz.rubro     || '',
+    notes:   'Cliente desde ' + fmtDate(d.dateIssue) + ' · Doc #' + d.num,
+    remType: '',
+    remDate: '',
+  });
+  localStorage.setItem('pp4_clients', JSON.stringify(clients));
+  updateBadges();
+  toast('\u{1F464} "' + name + '" agregado al catálogo de clientes', 'ok');
+}
+function toInv(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  const inv = JSON.parse(JSON.stringify(d));
+  inv.id = Date.now(); inv.type = 'factura'; inv.num = padN(cfg.nextF || 1);
+  inv.status = 'pending'; inv.createdAt = new Date().toISOString();
+  cfg.nextF = (cfg.nextF || 1) + 1;
+  docs.push(inv); persist();
+  toast('🧾 Factura #' + inv.num + ' creada', 'ok');
+  renderDocs(); updateBadges();
+}
+function delDoc(id) {
+  // Use == (loose) to handle id stored as string vs number
+  const idx = docs.findIndex(x => x.id == id);
+  if (idx === -1) { toast('Documento no encontrado', 'err'); return; }
+  showConfirm('¿Eliminar este documento?', () => {
+    docs.splice(idx, 1);
+    persist(); renderDocs(); updateStats();
+    toast('Documento eliminado', 'inf');
+  });
+}
+
+function showConfirm(msg, onOk) {
+  // Remove any existing confirm
+  const old = document.getElementById('customConfirm');
+  if (old) old.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'customConfirm';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(10,30,80,.6);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:16px';
+  overlay.innerHTML = `
+    <div style="background:#fff;border-radius:18px;padding:28px 24px;max-width:340px;width:100%;box-shadow:0 20px 60px rgba(10,30,80,.25);text-align:center">
+      <div style="font-size:1.8rem;margin-bottom:12px">🗑️</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:#0e1b3d;margin-bottom:6px">${msg}</div>
+      <div style="font-size:.8rem;color:#7888a8;margin-bottom:22px">Esta acción no se puede deshacer.</div>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button onclick="document.getElementById('customConfirm').remove()"
+          style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;padding:10px 22px;border-radius:9px;border:1.5px solid #dde3f5;background:#fff;color:#364061;cursor:pointer;font-size:.88rem">
+          Cancelar
+        </button>
+        <button id="confirmOkBtn"
+          style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;padding:10px 22px;border-radius:9px;border:none;background:#dc2626;color:#fff;cursor:pointer;font-size:.88rem">
+          Sí, eliminar
+        </button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+  document.getElementById('confirmOkBtn').onclick = () => {
+    overlay.remove();
+    onOk();
+  };
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+}
+
+// ═══════════════════════════════════════
+//  CLIENTS
+// ═══════════════════════════════════════
+function renderClients() {
+  const q = (gv('cliSearch') || '').toLowerCase();
+  let list = clients.filter(c => !q || (c.name || '').toLowerCase().includes(q) || (c.tags || '').toLowerCase().includes(q));
+  const cont = el('clientGrid');
+  el('navCliBadge').textContent = clients.length;
+  if (!list.length) {
+    cont.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="ei">👥</div><h3>Sin clientes</h3><p>Agregá tu primer cliente para empezar a enviarles recordatorios</p></div>`;
+    return;
+  }
+  cont.innerHTML = list.map(c => {
+    const initials = (c.name || '?').split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+    const tags = (c.tags || '').split(',').map(t => t.trim()).filter(Boolean);
+    const remLabel = { mensual:'Mensual', bimestral:'Bimestral', trimestral:'Trimestral', semestral:'Semestral', anual:'Anual' };
+    const hasRem = c.remType && c.remDate;
+    const remDiff = hasRem ? Math.ceil((new Date(c.remDate) - new Date()) / 86400000) : 99;
+    const remUrgent = remDiff <= 7;
+    return `<div class="client-card" onclick="openEditClient(${c.id})">
+      <div class="client-header">
+        <div class="client-avatar">${initials}</div>
+        <div class="client-info">
+          <h3>${esc(c.name)}</h3>
+          <p>${c.rubro||''}</p>
+        </div>
+      </div>
+      <div class="client-meta">
+        ${c.phone ? `<div class="client-meta-row"><span class="ico">📱</span>${esc(c.phone)}</div>` : ''}
+        ${c.email ? `<div class="client-meta-row"><span class="ico">📧</span>${esc(c.email)}</div>` : ''}
+        ${c.addr  ? `<div class="client-meta-row"><span class="ico">📍</span>${esc(c.addr)}</div>` : ''}
+      </div>
+      ${tags.length ? `<div class="client-tags">${tags.map(t=>`<span class="tag-item">🏷 ${esc(t)}</span>`).join('')}</div>` : ''}
+      <div class="client-footer">
+        ${hasRem ? `<div class="reminder-badge" style="${remUrgent?'background:#fee2e2;border-color:#fecaca;color:var(--red)':''}">
+          ${remUrgent?'🔴':'🔔'} ${remLabel[c.remType]||''} · ${fmtDate(c.remDate)}
+        </div>` : '<div style="flex:1;font-size:.74rem;color:var(--ink3)">Sin recordatorio</div>'}
+        <button class="btn btn-pri btn-xs" onclick="event.stopPropagation();quickWA(${c.id})">💬 WA</button>
+        <button class="btn btn-sec btn-xs" onclick="event.stopPropagation();newDocForClient(${c.id})">+ Doc</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function openNewClient() {
+  el('clientModTitle').textContent = '➕ Nuevo cliente';
+  el('clientEditId').value = '';
+  ['clName','clPhone','clEmail','clAddr','clTags','clNotes','clInternal'].forEach(id => el(id).value = '');
+  el('clRemType').value = '';
+  el('clRemDate').value = '';
+  el('clientMod').classList.add('on');
+}
+function openEditClient(id) {
+  const c = clients.find(x => x.id === id); if (!c) return;
+  el('clientModTitle').textContent = '✏️ Editar cliente';
+  el('clientEditId').value = id;
+  el('clName').value    = c.name  || '';
+  el('clPhone').value   = c.phone || '';
+  el('clEmail').value   = c.email || '';
+  el('clAddr').value    = c.addr  || '';
+  el('clTags').value    = c.tags  || '';
+  el('clNotes').value    = c.notes    || '';
+  el('clInternal').value = c.internal || '';
+  el('clRemType').value = c.remType || '';
+  el('clRemDate').value = c.remDate || '';
+  el('clientMod').classList.add('on');
+}
+function closeClientMod() { el('clientMod').classList.remove('on'); }
+
+function saveClient() {
+  const name = gv('clName');
+  if (!name) { toast('El nombre es obligatorio', 'err'); return; }
+  const editId = gv('clientEditId');
+
+  // Freemium check for new clients
+  if (!editId && !isPro() && clients.length >= FREE_LIMITS.clients) {
+    closeClientMod();
+    openUpgrade(
+      '👥 Límite de clientes alcanzado',
+      `El plan gratuito permite hasta ${FREE_LIMITS.clients} clientes. Actualizá a Pro para agregar clientes ilimitados.`
+    );
+    return;
+  }
+  const data = {
+    name, phone: gv('clPhone'), email: gv('clEmail'), addr: gv('clAddr'),
+    tags: gv('clTags'), notes: gv('clNotes'),
+    internal: gv('clInternal'),
+    remType: gv('clRemType'), remDate: gv('clRemDate'),
+  };
+  if (editId) {
+    const idx = clients.findIndex(c => c.id === +editId);
+    if (idx >= 0) clients[idx] = { ...clients[idx], ...data };
+  } else {
+    clients.push({ id: Date.now(), ...data });
+  }
+  syncClients();
+  closeClientMod();
+  renderClients();
+  toast('✓ Cliente guardado', 'ok');
+}
+
+function quickWA(id) {
+  const c = clients.find(x => x.id === id); if (!c) return;
+  const ph = (c.phone || '').replace(/\D/g, '');
+  const msg = `Hola ${c.name}! Te contactamos de ${biz.name || 'nuestra empresa'} para coordinar el próximo mantenimiento o nuevo servicio. ¿Cuándo te viene bien?`;
+  window.open(`https://wa.me/${ph}?text=${encodeURIComponent(msg)}`, '_blank');
+}
+function newDocForClient(id) {
+  const c = clients.find(x => x.id === id); if (!c) return;
+  el('cName').value  = c.name  || '';
+  el('cPhone').value = c.phone || '';
+  el('cEmail').value = c.email || '';
+  el('cAddr').value  = c.addr  || '';
+  goS('nuevo'); goStep(0);
+  toast('Cliente cargado', 'ok');
+}
+
+function openClientPicker() {
+  renderPicker();
+  el('pickerMod').classList.add('on');
+}
+function closePicker() { el('pickerMod').classList.remove('on'); }
+function renderPicker() {
+  const q = (gv('pickerSearch') || '').toLowerCase();
+  const list = clients.filter(c => !q || (c.name||'').toLowerCase().includes(q));
+  const cont = el('pickerList');
+  if (!list.length) { cont.innerHTML = '<p style="text-align:center;color:var(--ink3);font-size:.84rem;padding:20px 0">Sin clientes</p>'; return; }
+  cont.innerHTML = list.map(c => `
+    <div style="padding:11px 13px;border:1.5px solid var(--line);border-radius:var(--r-sm);cursor:pointer;transition:all .15s;font-size:.88rem;font-weight:600"
+      onclick="pickClient(${c.id})"
+      onmouseenter="this.style.borderColor='var(--primary)';this.style.background='var(--b50)'"
+      onmouseleave="this.style.borderColor='var(--line)';this.style.background=''"
+    >${esc(c.name)} <span style="font-size:.75rem;color:var(--ink3);font-weight:400">${c.phone||''}</span></div>
+  `).join('');
+}
+function pickClient(id) {
+  const c = clients.find(x => x.id === id); if (!c) return;
+  el('cName').value  = c.name  || '';
+  el('cPhone').value = c.phone || '';
+  el('cEmail').value = c.email || '';
+  el('cAddr').value  = c.addr  || '';
+  closePicker();
+  toast('✓ Cliente cargado', 'ok');
+}
+
+// ═══════════════════════════════════════
+//  REMINDERS (dashboard)
+// ═══════════════════════════════════════
+function renderReminders() {
+  const now = new Date();
+  const urgent = clients.filter(c => {
+    if (!c.remDate) return false;
+    const diff = Math.ceil((new Date(c.remDate) - now) / 86400000);
+    return diff <= 14;
+  }).sort((a, b) => new Date(a.remDate) - new Date(b.remDate)).slice(0, 5);
+
+  const cont = el('reminderList');
+  if (!urgent.length) {
+    cont.innerHTML = '<div style="text-align:center;padding:22px;font-size:.84rem;color:var(--ink3)">Sin recordatorios próximos</div>';
+    return;
+  }
+  cont.innerHTML = urgent.map(c => {
+    const diff = Math.ceil((new Date(c.remDate) - now) / 86400000);
+    const urgent = diff <= 3;
+    const color = urgent ? 'var(--red)' : 'var(--amber)';
+    return `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line2)">
+      <div style="width:38px;height:38px;border-radius:50%;background:${urgent?'var(--red-lt)':'var(--amber-lt)'};display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0">${urgent?'🔴':'🔔'}</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:.88rem;font-weight:700">${esc(c.name)}</div>
+        <div style="font-size:.76rem;color:${color};font-weight:600">${diff <= 0 ? 'Vencido' : diff === 1 ? 'Mañana' : `En ${diff} días`} · ${fmtDate(c.remDate)}</div>
+      </div>
+      <button class="btn btn-pri btn-xs" onclick="quickWA(${c.id})">💬 WA</button>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════
+//  BIZ & CONFIG
+// ═══════════════════════════════════════
+function loadBizFields() {
+  el('bzName').value  = biz.name  || '';
+  el('bzCuit').value  = biz.cuit  || '';
+  el('bzPhone').value = biz.phone || '';
+  el('bzEmail').value = biz.email || '';
+  el('bzAddr').value  = biz.addr  || '';
+  el('bzIva').value   = biz.iva   || 'Monotributista';
+  el('bzRubro').value = biz.rubro || '';
+}
+function saveBiz() {
+  biz = { name: gv('bzName'), cuit: gv('bzCuit'), phone: gv('bzPhone'), email: gv('bzEmail'), addr: gv('bzAddr'), iva: gv('bzIva'), rubro: gv('bzRubro') };
+  syncBizCfg();
+  updateSidebar(); toast('✓ Datos guardados', 'ok');
+}
+function updateSidebar() {
+  el('sbName').textContent = biz.name || 'Mi Negocio';
+  el('sbSub').textContent  = biz.iva  || 'Configurar →';
+}
+
+function loadCfgFields() {
+  el('cfgCur').value  = cfg.currency || 'ARS';
+  el('cfgExp').value  = cfg.expiry   || 15;
+  el('cfgNP').value   = cfg.nextP    || 1;
+  el('cfgNF').value   = cfg.nextF    || 1;
+  el('cfgFoot').value = cfg.footer   || '';
+  // Apply saved MP links/codes at load time (runtime only — not exposed in UI)
+  if (cfg.mpMonthly)    MP_LINKS.monthly          = cfg.mpMonthly;
+  if (cfg.mpLifetime)   MP_LINKS.lifetime          = cfg.mpLifetime;
+  if (cfg.codeMonthly)  ACTIVATION_CODES.monthly   = cfg.codeMonthly;
+  if (cfg.codeLifetime) ACTIVATION_CODES.lifetime  = cfg.codeLifetime;
+}
+function saveCfg() {
+  cfg = {
+    currency: gv('cfgCur'), expiry: +gv('cfgExp') || 15,
+    nextP: +gv('cfgNP') || 1, nextF: +gv('cfgNF') || 1,
+    footer: gv('cfgFoot'),
+    // MP links & codes are hardcoded by the developer — not editable by users
+    mpMonthly:    cfg.mpMonthly    || '',
+    mpLifetime:   cfg.mpLifetime   || '',
+    codeMonthly:  cfg.codeMonthly  || 'MESPRO',
+    codeLifetime: cfg.codeLifetime || 'VITALPRO',
+  };
+  localStorage.setItem('pp4_cfg', JSON.stringify(cfg));
+  toast('✓ Configuración guardada', 'ok');
+}
+
+// ═══════════════════════════════════════
+//  STATS
+// ═══════════════════════════════════════
+function updateDashWelcome() {
+  var el2 = document.getElementById('dashBizNameHdr');
+  if (el2) el2.textContent = biz.name || 'Tu negocio';
+  var gr = document.getElementById('dashGreeting');
+  if (gr) {
+    var h = new Date().getHours();
+    var msg = h < 12 ? 'Buenos días 👋' : h < 19 ? 'Buenas tardes 👋' : 'Buenas noches 👋';
+    gr.textContent = msg;
+  }
+}
+
+function updateStats() {
+  const now   = new Date();
+  const month = now.getMonth(), year = now.getFullYear();
+  const in7   = new Date(); in7.setDate(in7.getDate() + 7);
+  const sym   = csym(), f = fmt;
+
+  el('stP').textContent = docs.filter(d => d.type === 'presupuesto').length;
+  el('stF').textContent = docs.filter(d => d.type === 'factura').length;
+  el('stA').textContent = docs.filter(d => {
+    if (d.type !== 'factura') return false;
+    if (d.status !== 'accepted' && d.status !== 'cobrado') return false;
+    const c = new Date(d.createdAt || d.dateIssue);
+    return c.getMonth() === month && c.getFullYear() === year;
+  }).length;
+  el('stV').textContent = docs.filter(d => {
+    if (!d.dateExpiry || d.type !== 'presupuesto') return false;
+    const e = new Date(d.dateExpiry);
+    return e >= now && e <= in7;
+  }).length;
+
+  // Facturado: facturas aprobadas o cobradas este mes (no presupuestos)
+  const facturadosThisMonth = docs.filter(d => {
+    if (d.type !== 'factura') return false;
+    if (d.status !== 'accepted' && d.status !== 'cobrado') return false;
+    const c = new Date(d.dateIssue || d.createdAt);
+    return c.getMonth() === month && c.getFullYear() === year;
+  });
+  const revMonth = facturadosThisMonth.reduce((a, d) => a + docTot(d), 0);
+
+  // Cobrado: facturas marcadas como cobradas este mes
+  const cobradosThisMonth = docs.filter(d => {
+    if (d.type !== 'factura') return false;
+    if (d.status !== 'cobrado') return false;
+    const c = new Date(d.dateIssue || d.createdAt);
+    return c.getMonth() === month && c.getFullYear() === year;
+  });
+  const revCobrado = cobradosThisMonth.reduce((a, d) => a + docTot(d), 0);
+
+  const revM = document.getElementById('stRevMonth');
+  const revC = document.getElementById('stRevCobrado');
+  if (revM) revM.textContent = sym + ' ' + f(revMonth);
+  if (revC) revC.textContent = sym + ' ' + f(revCobrado);
+
+  updateBadges();
+}
+function updateBadges() {
+  const n = docs.length;
+  el('navBadge').textContent = n;
+  el('bnBadge').textContent  = n;
+  if (n === 0) { el('bnBadge').style.display = 'none'; } else { el('bnBadge').style.display = ''; }
+  el('navCliBadge').textContent = clients.length;
+}
+
+function renderRecent() {
+  const cont = el('recentDocs');
+  const rec  = docs.slice().reverse().slice(0, 4);
+  if (!rec.length) {
+    cont.innerHTML = '<div class="empty-state"><div class="ei">📄</div><h3>Sin documentos aún</h3><p>Creá tu primer presupuesto</p></div>';
+    return;
+  }
+  const sym = csym(), f = fmt;
+  cont.innerHTML = rec.map(d => `
+    <div class="doc-card clickable" onclick="prevDoc(${d.id})">
+      <div class="doc-ico ${d.type === 'presupuesto' ? 'pres' : 'fact'}">${d.type === 'presupuesto' ? '📄' : '🧾'}</div>
+      <div class="doc-inf">
+        <h3>${esc(d.clientName)||'Sin nombre'} <span style="font-size:.74rem;color:var(--ink3);font-weight:400">#${d.num}</span></h3>
+        <p>${fmtDate(d.dateIssue)}</p>
+        <div style="margin-top:4px">${chipSt(d)}</div>
+      </div>
+      <div class="doc-tot">${sym} ${f(docTot(d))}</div>
+    </div>`).join('');
+}
+
+// ═══════════════════════════════════════
+//  PDF PREVIEW
+// ═══════════════════════════════════════
+function openPrev() {
+  const d = buildCurDoc();
+  if (!d.items.length) { toast('Agregá ítems primero', 'err'); return; }
+  curDoc = d; renderPDFContent(d);
+  el('pdfOv').classList.add('on');
+}
+function prevDoc(id) {
+  const d = docs.find(x => x.id == id); if (!d) return;
+  curDoc = d; renderPDFContent(d);
+  el('pdfOv').classList.add('on');
+}
+function closePrev() { el('pdfOv').classList.remove('on'); }
+
+function buildCurDoc() {
+  return {
+    type: gv('docType'), num: gv('docNum'),
+    clientName: gv('cName'), clientPhone: gv('cPhone'),
+    clientEmail: gv('cEmail'), clientAddr: gv('cAddr'),
+    dateIssue: gv('dateIssue'), dateExpiry: gv('dateExpiry'), dateService: gv('dateSvc'),
+    items: JSON.parse(JSON.stringify(items)),
+    notes: gv('docNotes'),
+    discount: +gv('discount') || 0, ivaRate: +gv('ivaRate') || 0,
+    status: 'pending',
+  };
+}
+
+function renderPDFContent(d) {
+  const sym = csym(), f = fmt;
+  const sub   = d.items.reduce((a, it) => a + it.qty * it.price, 0);
+  const dA    = sub * (d.discount || 0) / 100;
+  const after = sub - dA;
+  const iA    = after * (d.ivaRate || 0) / 100;
+  const grand = after + iA;
+  const label = d.type === 'presupuesto' ? 'PRESUPUESTO' : 'FACTURA NO FISCAL';
+
+  el('pdfLbl').textContent = label + ' N° ' + (d.num || '0001');
+
+  // Stamp: positioned bottom-right, does NOT overlap content
+  const stamp = d.status === 'accepted'
+    ? '<div class="pdoc-stamp stamp-ok">ACEPTADO</div>'
+    : isExp(d) ? '<div class="pdoc-stamp stamp-exp">VENCIDO</div>' : '';
+
+  const logoH = logoURL
+    ? `<div class="pdoc-logo"><img src="${logoURL}" alt="logo"></div>`
+    : `<div class="pdoc-logo" style="font-size:1.8rem">${biz.rubro ? '🔧' : '🏢'}</div>`;
+
+  // Per-item line total (with individual discount)
+  function lineTotal(it) {
+    const gross = it.qty * it.price;
+    return gross - gross * (it.disc || 0) / 100;
+  }
+  const rows = d.items.map((it, i) => `
+    <tr style="background:${i % 2 === 0 ? '#fff' : '#f8faff'}">
+      <td style="padding:10px 12px;border-bottom:1px solid #eef2fc;font-size:.85rem;color:#1e293b">${esc(it.desc)}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #eef2fc;font-size:.82rem;color:#64748b">${esc(it.type)}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #eef2fc;font-size:.85rem;text-align:right">${it.qty}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #eef2fc;font-size:.85rem;text-align:right;color:#374151">${sym}&nbsp;${f(it.price)}</td>
+      <td style="padding:10px 12px;border-bottom:1px solid #eef2fc;font-size:.85rem;text-align:right;font-weight:700;color:#0e1b3d">${sym}&nbsp;${f(it.qty * it.price)}</td>
+    </tr>`).join('');
+
+  el('pdfContent').innerHTML = `
+    ${stamp}
+    <div class="pdoc-head">
+      <div style="display:flex;align-items:center;gap:16px">
+        ${logoH}
+        <div>
+          <div class="pdoc-biz-name">${esc(biz.name || 'Mi Empresa')}</div>
+          <div class="pdoc-biz-det">
+            ${biz.cuit  ? '<span>CUIT: ' + esc(biz.cuit) + '</span><br>' : ''}
+            ${biz.iva   ? '<span>' + esc(biz.iva) + '</span><br>' : ''}
+            ${biz.addr  ? '<span>' + esc(biz.addr) + '</span><br>' : ''}
+            ${biz.phone ? '<span>' + esc(biz.phone) + '</span>' : ''}
+            ${biz.email ? ' &nbsp;·&nbsp; <span>' + esc(biz.email) + '</span>' : ''}
+          </div>
+        </div>
+      </div>
+      <div class="pdoc-type" style="text-align:right">
+        <h2>${label}</h2>
+        <div class="dn">N°&nbsp;${d.num || '0001'}</div>
+        ${d.status === 'accepted'
+          ? '<div style="margin-top:8px"><span style="display:inline-flex;align-items:center;gap:5px;background:#d1fae5;color:#0a7c4b;border:1.5px solid #6ee7b7;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:800;letter-spacing:.04em">✓ ACEPTADO</span></div>'
+          : ''}
+      </div>
+    </div>
+
+    <div class="pdoc-meta">
+      <div class="pdoc-mb">
+        <div class="l">Cliente</div>
+        <div class="v" style="font-size:.95rem">${esc(d.clientName || '—')}</div>
+        ${d.clientAddr  ? '<div class="v2">' + esc(d.clientAddr)  + '</div>' : ''}
+        ${d.clientPhone ? '<div class="v2">' + esc(d.clientPhone) + '</div>' : ''}
+        ${d.clientEmail ? '<div class="v2">' + esc(d.clientEmail) + '</div>' : ''}
+      </div>
+      <div class="pdoc-mb">
+        <div class="l">Fecha de emisión</div>
+        <div class="v">${fmtDate(d.dateIssue)}</div>
+        ${d.dateExpiry && d.type === 'presupuesto'
+          ? '<div style="margin-top:10px"><div class="l">Válido hasta</div><div class="v" style="color:' + (isExp(d) ? '#c41c1c' : '#b45309') + '">' + fmtDate(d.dateExpiry) + '</div></div>'
+          : ''}
+        ${d.dateService
+          ? '<div style="margin-top:10px"><div class="l">Fecha del trabajo</div><div class="v">' + fmtDate(d.dateService) + '</div></div>'
+          : ''}
+      </div>
+    </div>
+
+    <div style="background:#1540a0;color:#fff;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:8px 14px;border-radius:7px 7px 0 0;margin-top:20px">
+      Ítems — Servicios, trabajos y materiales
+    </div>
+    <table style="width:100%;border-collapse:collapse;border:1px solid #e8effe;border-top:none">
+      <thead>
+        <tr style="background:#eef2fd">
+          <th style="padding:9px 12px;font-size:.72rem;font-weight:800;color:#364061;text-align:left;letter-spacing:.05em">DESCRIPCIÓN</th>
+          <th style="padding:9px 12px;font-size:.72rem;font-weight:800;color:#364061;text-align:left;letter-spacing:.05em">TIPO / UNID.</th>
+          <th style="padding:9px 12px;font-size:.72rem;font-weight:800;color:#364061;text-align:right;letter-spacing:.05em">CANT.</th>
+          <th style="padding:9px 12px;font-size:.72rem;font-weight:800;color:#364061;text-align:right;letter-spacing:.05em">P. UNIT.</th>
+          <th style="padding:9px 12px;font-size:.72rem;font-weight:800;color:#364061;text-align:right;letter-spacing:.05em">SUBTOTAL</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+
+    <div style="display:flex;justify-content:flex-end;margin-top:20px">
+      <div style="min-width:260px;border:1.5px solid #dde3f5;border-radius:10px;overflow:hidden">
+        <div style="display:flex;justify-content:space-between;padding:9px 15px;font-size:.85rem;color:#64748b;border-bottom:1px solid #eef2fc;background:#fafbff">
+          <span>Subtotal</span><span style="color:#0e1b3d;font-weight:600">${sym}&nbsp;${f(sub)}</span>
+        </div>
+        ${d.discount ? `
+        <div style="display:flex;justify-content:space-between;padding:9px 15px;font-size:.85rem;border-bottom:1px solid #eef2fc;background:#fff8f8">
+          <span style="color:#b45309">Descuento (${d.discount}%)</span>
+          <span style="color:#c41c1c;font-weight:600">−&nbsp;${sym}&nbsp;${f(dA)}</span>
+        </div>` : ''}
+        ${d.ivaRate ? `
+        <div style="display:flex;justify-content:space-between;padding:9px 15px;font-size:.85rem;border-bottom:1px solid #eef2fc;background:#fafbff">
+          <span style="color:#64748b">IVA (${d.ivaRate}%)</span>
+          <span style="color:#0e1b3d;font-weight:600">${sym}&nbsp;${f(iA)}</span>
+        </div>` : ''}
+        <div style="display:flex;justify-content:space-between;padding:12px 15px;background:#0f2d6e">
+          <span style="color:#fff;font-weight:800;font-size:.95rem;letter-spacing:.03em">TOTAL</span>
+          <span style="color:#93adf5;font-weight:800;font-size:.95rem">${sym}&nbsp;${f(grand)}</span>
+        </div>
+      </div>
+    </div>
+
+    ${d.notes ? `
+    <div style="margin-top:20px;padding:14px 16px;background:#fffbeb;border-radius:8px;border-left:3.5px solid #f59e0b">
+      <div style="font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#d97706;margin-bottom:6px">Observaciones / Condiciones</div>
+      <p style="font-size:.84rem;color:#555;line-height:1.65;margin:0">${esc(d.notes)}</p>
+    </div>` : ''}
+
+    <div style="margin-top:28px;padding-top:14px;border-top:1.5px solid #e8effe;text-align:center;font-size:.69rem;color:#94a3b8">
+      ${isPro() ? getWatermarkText() : getWatermarkTextFree()}
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════
+//  DOWNLOAD PDF (jsPDF)
+// ═══════════════════════════════════════
+function buildPDFDoc(d) {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+  const sym = csym(), f = fmt;
+  const sub   = d.items.reduce((a, it) => a + it.qty * it.price, 0);
+  const dA    = sub * (d.discount || 0) / 100;
+  const after = sub - dA;
+  const iA    = after * (d.ivaRate || 0) / 100;
+  const grand = after + iA;
+  const label = d.type === 'presupuesto' ? 'PRESUPUESTO' : 'FACTURA NO FISCAL';
+  const lm = 15, rw = 180;
+  let y = 14;
+
+  // ── HEADER BAR ──────────────────────────────────────────────────────
+  const HDR_H = logoURL ? 28 : 22;
+  pdf.setFillColor(15, 45, 110);
+  pdf.rect(lm, y, rw, HDR_H, 'F');
+
+  // Logo — placed left, vertically centered in header, does NOT overlap text
+  const LOGO_SZ = 20;
+  const LOGO_X  = lm + 3;
+  const LOGO_Y  = y + (HDR_H - LOGO_SZ) / 2;
+  const TEXT_X  = logoURL ? lm + LOGO_SZ + 8 : lm + 5;
+
+  if (logoURL) {
+    try {
+      // White rounded background behind logo
+      pdf.setFillColor(255, 255, 255);
+      pdf.roundedRect(LOGO_X - 1, LOGO_Y - 1, LOGO_SZ + 2, LOGO_SZ + 2, 2, 2, 'F');
+      pdf.addImage(logoURL, 'PNG', LOGO_X, LOGO_Y, LOGO_SZ, LOGO_SZ);
+    } catch(e) {}
+  }
+
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFontSize(15); pdf.setFont('helvetica', 'bold');
+  pdf.text(label, TEXT_X, y + (HDR_H * 0.42));
+  pdf.setFontSize(8.5); pdf.setFont('helvetica', 'normal');
+  pdf.text('N° ' + (d.num || '0001'), TEXT_X, y + (HDR_H * 0.72));
+
+  // Business name right-aligned
+  const BIZ_X = lm + rw - 4;
+  pdf.setFontSize(10.5); pdf.setFont('helvetica', 'bold');
+  pdf.text(biz.name || 'Mi Empresa', BIZ_X, y + (HDR_H * 0.38), { align: 'right' });
+  pdf.setFontSize(7.5); pdf.setFont('helvetica', 'normal');
+  let bizY = y + (HDR_H * 0.38) + 5;
+  if (biz.cuit) { pdf.text('CUIT: ' + biz.cuit, BIZ_X, bizY, { align: 'right' }); bizY += 4.5; }
+  if (biz.iva)  { pdf.text(biz.iva, BIZ_X, bizY, { align: 'right' }); }
+  y += HDR_H + 6;
+
+  // ── META BOXES: CLIENT + DATES ───────────────────────────────────────
+  const BOX_H = 30;
+  const BOX1_W = 100, BOX2_W = 76;
+
+  pdf.setFillColor(245, 247, 252);
+  pdf.roundedRect(lm, y, BOX1_W, BOX_H, 2, 2, 'F');
+  pdf.roundedRect(lm + BOX1_W + 4, y, BOX2_W, BOX_H, 2, 2, 'F');
+  pdf.setDrawColor(220, 228, 248);
+  pdf.roundedRect(lm, y, BOX1_W, BOX_H, 2, 2, 'S');
+  pdf.roundedRect(lm + BOX1_W + 4, y, BOX2_W, BOX_H, 2, 2, 'S');
+
+  // Client box
+  pdf.setFontSize(6.5); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(148, 163, 184);
+  pdf.text('CLIENTE', lm + 4, y + 6);
+  pdf.setFontSize(9.5); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(14, 27, 61);
+  pdf.text(d.clientName || '—', lm + 4, y + 13);
+  pdf.setFont('helvetica', 'normal'); pdf.setFontSize(8);
+  let cliY = y + 19;
+  if (d.clientAddr)  { pdf.text(d.clientAddr,  lm + 4, cliY, { maxWidth: BOX1_W - 8 }); cliY += 5.5; }
+  if (d.clientPhone) { pdf.text(d.clientPhone, lm + 4, cliY, { maxWidth: BOX1_W - 8 }); }
+
+  // Dates box
+  const DX = lm + BOX1_W + 8;
+  pdf.setFontSize(6.5); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(148, 163, 184);
+  pdf.text('FECHA DE EMISIÓN', DX, y + 6);
+  pdf.setFontSize(9); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(14, 27, 61);
+  pdf.text(fmtDate(d.dateIssue), DX, y + 13);
+  if (d.dateExpiry && d.type === 'presupuesto') {
+    pdf.setFontSize(6.5); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(148, 163, 184);
+    pdf.text('VÁLIDO HASTA', DX, y + 21);
+    const ec = isExp(d) ? [196, 28, 28] : [180, 83, 9];
+    pdf.setTextColor(ec[0], ec[1], ec[2]); pdf.setFont('helvetica', 'bold'); pdf.setFontSize(9);
+    pdf.text(fmtDate(d.dateExpiry), DX, y + 27);
+  } else if (d.dateService) {
+    pdf.setFontSize(6.5); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(148, 163, 184);
+    pdf.text('FECHA DEL TRABAJO', DX, y + 21);
+    pdf.setFontSize(9); pdf.setFont('helvetica', 'normal'); pdf.setTextColor(14, 27, 61);
+    pdf.text(fmtDate(d.dateService), DX, y + 27);
+  }
+  y += BOX_H + 8;
+
+  // ── ITEMS TABLE ──────────────────────────────────────────────────────
+  const ROW_H = 8;
+  pdf.setFillColor(21, 64, 160);
+  pdf.rect(lm, y, rw, 8, 'F');
+  pdf.setTextColor(255, 255, 255); pdf.setFontSize(7); pdf.setFont('helvetica', 'bold');
+  pdf.text('DESCRIPCIÓN DE TRABAJOS Y MATERIALES', lm + 5, y + 5.5);
+  y += 8;
+
+  // Column widths: desc, tipo, cant, precio, subtotal
+  const cols = [76, 26, 18, 30, 30];
+  pdf.setFillColor(235, 240, 255);
+  pdf.rect(lm, y, rw, 7, 'F');
+  pdf.setTextColor(54, 64, 97); pdf.setFontSize(6.8); pdf.setFont('helvetica', 'bold');
+  let cx = lm + 4;
+  ['DESCRIPCIÓN', 'TIPO / UNID.', 'CANT.', 'P. UNIT.', 'SUBTOTAL'].forEach((h, i) => {
+    const x = i >= 2 ? cx + cols[i] - 3 : cx;
+    pdf.text(h, x, y + 5, i >= 2 ? { align: 'right' } : {});
+    cx += cols[i];
+  });
+  y += 7;
+
+  d.items.forEach((it, idx) => {
+    if (y > 250) { pdf.addPage(); y = 15; }
+    const rh = ROW_H;
+    pdf.setFillColor(idx % 2 === 0 ? 255 : 248, idx % 2 === 0 ? 255 : 250, idx % 2 === 0 ? 255 : 255);
+    pdf.rect(lm, y, rw, rh, 'F');
+    pdf.setDrawColor(230, 235, 248);
+    pdf.line(lm, y + rh, lm + rw, y + rh);
+    pdf.setTextColor(30, 41, 59); pdf.setFont('helvetica', 'normal'); pdf.setFontSize(8.5);
+    cx = lm + 4;
+    const vals = [it.desc || '', it.type || '', String(it.qty),
+                  sym + ' ' + f(it.price), sym + ' ' + f(it.qty * it.price)];
+    vals.forEach((v, i) => {
+      if (i === 4) { pdf.setFont('helvetica', 'bold'); pdf.setTextColor(14, 27, 61); }
+      else { pdf.setFont('helvetica', 'normal'); pdf.setTextColor(30, 41, 59); }
+      if (i === 1) pdf.setTextColor(100, 116, 139);
+      if (i >= 2) pdf.text(v, cx + cols[i] - 3, y + 5.5, { align: 'right' });
+      else        pdf.text(v, cx, y + 5.5, { maxWidth: cols[i] - 4 });
+      cx += cols[i];
+    });
+    y += rh;
+  });
+  y += 8;
+
+  // ── TOTALS (right-aligned, clean) ────────────────────────────────────
+  const TX = lm + 108, TW = rw - 108;
+  if (y > 250) { pdf.addPage(); y = 15; }
+
+  const totRows = [
+    { lbl: 'Subtotal', val: sym + ' ' + f(sub), red: false },
+    ...(d.discount ? [{ lbl: 'Descuento (' + d.discount + '%)', val: '- ' + sym + ' ' + f(dA), red: true }] : []),
+    ...(d.ivaRate  ? [{ lbl: 'IVA (' + d.ivaRate + '%)',        val: sym + ' ' + f(iA),         red: false }] : []),
+  ];
+  totRows.forEach(({ lbl, val, red }) => {
+    pdf.setFillColor(248, 250, 255); pdf.rect(TX, y, TW, 7, 'F');
+    pdf.setDrawColor(220, 228, 248); pdf.line(TX, y + 7, TX + TW, y + 7);
+    pdf.setFontSize(8.5); pdf.setFont('helvetica', 'normal');
+    pdf.setTextColor(red ? 180 : 100, red ? 60 : 116, red ? 30 : 139);
+    pdf.text(lbl, TX + 4, y + 5);
+    pdf.setTextColor(red ? 196 : 14, red ? 28 : 27, red ? 28 : 61); pdf.setFont('helvetica', 'bold');
+    pdf.text(val, TX + TW - 3, y + 5, { align: 'right' });
+    y += 7;
+  });
+
+  // Grand total bar
+  pdf.setFillColor(15, 45, 110); pdf.rect(TX, y, TW, 11, 'F');
+  pdf.setTextColor(255, 255, 255); pdf.setFont('helvetica', 'bold'); pdf.setFontSize(10);
+  pdf.text('TOTAL', TX + 4, y + 7.5);
+  pdf.text(sym + ' ' + f(grand), TX + TW - 3, y + 7.5, { align: 'right' });
+  y += 18;
+
+  // ── STAMP (bottom-right corner, behind footer) ────────────────────────
+  if (d.status === 'accepted' || isExp(d)) {
+    const isAcc = d.status === 'accepted';
+    const stampText = isAcc ? 'ACEPTADO' : 'VENCIDO';
+    const [sr, sg, sb] = isAcc ? [10, 124, 75] : [196, 28, 28];
+    pdf.saveGraphicsState();
+    pdf.setGState(pdf.GState({ opacity: 0.10 }));
+    pdf.setTextColor(sr, sg, sb);
+    pdf.setFont('helvetica', 'bold'); pdf.setFontSize(26);
+    pdf.text(stampText, lm + rw - 10, 270, { align: 'right', angle: 18 });
+    pdf.restoreGraphicsState();
+  }
+
+  // ── NOTES ────────────────────────────────────────────────────────────
+  if (d.notes) {
+    if (y > 255) { pdf.addPage(); y = 15; }
+    const noteLines = pdf.splitTextToSize(d.notes, rw - 12);
+    const noteH     = Math.max(18, 6 + noteLines.length * 5);
+    pdf.setFillColor(255, 251, 235); pdf.rect(lm, y, rw, noteH, 'F');
+    pdf.setFillColor(245, 158, 11);  pdf.rect(lm, y, 3, noteH, 'F');
+    pdf.setTextColor(180, 83, 9); pdf.setFont('helvetica', 'bold'); pdf.setFontSize(6.5);
+    pdf.text('OBSERVACIONES / CONDICIONES', lm + 6, y + 5.5);
+    pdf.setTextColor(80, 80, 80); pdf.setFont('helvetica', 'normal'); pdf.setFontSize(8.5);
+    pdf.text(noteLines, lm + 6, y + 11);
+    y += noteH + 6;
+  }
+
+  // ── FOOTER ────────────────────────────────────────────────────────────
+  pdf.setDrawColor(220, 228, 248); pdf.line(lm, 281, lm + rw, 281);
+  pdf.setFont('helvetica', 'normal'); pdf.setFontSize(7); pdf.setTextColor(148, 163, 184);
+  pdf.text(isPro() ? getWatermarkText() : getWatermarkTextFree(), 105, 286, { align: 'center' });
+
+  const fname = d.type + '-' + (d.num || '001') + '-' + (d.clientName || 'cliente').replace(/[^a-z0-9]/gi, '_') + '.pdf';
+  return pdf;
+}
+
+function dlPDF() {
+  if (!curDoc) return;
+  const d = curDoc;
+  const pdf = buildPDFDoc(d);
+  const fname = d.type + '-' + (d.num || '001') + '-' + (d.clientName || 'cliente').replace(/[^a-z0-9]/gi, '_') + '.pdf';
+  pdf.save(fname);
+  toast('✓ PDF descargado', 'ok');
+}
+
+// ═══════════════════════════════════════
+//  SHARE
+// ═══════════════════════════════════════
+function shareApp() {
+  var link = APP_URL;
+  var appText =
+    '*PresupuestoPro* - La app para presupuestar desde el celular\n\n' +
+    'La uso para hacer presupuestos y facturas profesionales desde el celu en segundos.\n\n' +
+    '*Que tiene:*\n' +
+    '- Presupuestos y facturas en PDF\n' +
+    '- Envio directo por WhatsApp\n' +
+    '- Catalogo de clientes con recordatorios\n' +
+    '- Version gratuita disponible\n\n' +
+    'Abri este link desde Safari o Chrome y agrega la app a tu inicio:\n' +
+    link + '\n\n' +
+    '*Para el plan Pro sin limites:*\n' +
+    'wa.me/' + OWNER_WA + '\n\n' +
+    '_Si mencionas que yo te la pase, podes conseguir 1 mes gratis._';
+  window.open('https://wa.me/?text=' + encodeURIComponent(appText), '_blank');
+}
+
+function openShare() {
+  if (!curDoc) return;
+  // Show native share option only if Web Share API supports files
+  const nativeOpt = el('nativeShareOpt');
+  if (nativeOpt) {
+    nativeOpt.style.display = (navigator.canShare && navigator.share) ? '' : 'none';
+  }
+  el('shareTip').style.display = 'none';
+  el('shareMod').classList.add('on');
+}
+function closeShare() { el('shareMod').classList.remove('on'); }
+
+// Step 1: download PDF, then show tip + unlock send buttons
+function dlPDFAndContinue() {
+  dlPDF();
+  setTimeout(() => {
+    el('shareTip').style.display = '';
+  }, 600);
+}
+
+// Native share (Android/iOS) — shares the PDF file directly
+async function nativeShare() {
+  if (!curDoc) return;
+  const d = curDoc;
+  const { jsPDF } = window.jspdf;
+
+  // Re-generate PDF as blob
+  const pdf = buildPDFDoc(d);
+  const blob = pdf.output('blob');
+  const fname = d.type + '-' + (d.num || '001') + '-' + (d.clientName || 'cliente').replace(/[^a-z0-9]/gi, '_') + '.pdf';
+  const file  = new File([blob], fname, { type: 'application/pdf' });
+
+  const sym = csym(), f = fmt;
+  const tot  = docTot(d);
+  const tipo = d.type === 'presupuesto' ? 'Presupuesto' : 'Factura';
+  const text = 'Hola ' + (d.clientName || '') + '! 👋\n\nTe comparto el ' + tipo + ' N° *' + (d.num||'0001') + '*\n\n*Total: ' + sym + ' ' + f(tot) + '*';
+
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ files: [file], text });
+      closeShare();
+    } else {
+      // Fallback: just download
+      dlPDF();
+      el('shareTip').style.display = '';
+    }
+  } catch(e) {
+    if (e.name !== 'AbortError') {
+      dlPDF();
+      el('shareTip').style.display = '';
+    }
+  }
+}
+
+function sendWA() {
+  if (!curDoc) return;
+  const d = curDoc, sym = csym(), f = fmt;
+  const tot = docTot(d), tipo = d.type === 'presupuesto' ? 'Presupuesto' : 'Factura';
+  const text = 'Hola ' + (d.clientName || '') + '! 👋\n\nTe mando el ' + tipo + ' N° *' + (d.num || '0001') + '*\n\n' +
+    '*Total: ' + sym + ' ' + f(tot) + '*\n' +
+    (d.dateExpiry && d.type === 'presupuesto' ? '_Válido hasta: ' + fmtDate(d.dateExpiry) + '_\n' : '') +
+    (d.notes ? '\n' + d.notes + '\n' : '') +
+    '\n_Adjunto el PDF al chat._';
+  const ph = (d.clientPhone || '').replace(/\D/g, '');
+  window.open('https://wa.me/' + (ph || '') + '?text=' + encodeURIComponent(text), '_blank');
+  el('shareTip').style.display = '';
+}
+
+function sendMail() {
+  if (!curDoc) return;
+  const d = curDoc, sym = csym(), f = fmt;
+  const tot = docTot(d), tipo = d.type === 'presupuesto' ? 'Presupuesto' : 'Factura';
+  const subj = tipo + ' N° ' + (d.num || '0001') + ' — ' + (biz.name || '');
+  const body = 'Estimado/a ' + (d.clientName || '') + ',\n\n' +
+    'Te envio el ' + tipo + ' N° ' + (d.num || '0001') + ' por un total de ' + sym + ' ' + f(tot) + '.\n' +
+    'Encontrás el PDF adjunto en este correo.\n\n' +
+    (d.notes ? d.notes + '\n\n' : '') +
+    (biz.name || '') + '\n' + (biz.phone || '') + '\n' + (biz.email || '');
+  window.open('mailto:' + (d.clientEmail || '') + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body), '_blank');
+  el('shareTip').style.display = '';
+}
+
+// ═══════════════════════════════════════
+//  FREEMIUM FUNCTIONS
+// ═══════════════════════════════════════
+function isPro() {
+  return proStatus === 'monthly' || proStatus === 'lifetime';
+}
+
+function openUpgrade(title, subtitle) {
+  if (title)    el('upgradeTitle').textContent    = title;
+  if (subtitle) el('upgradeSubtitle').textContent = subtitle;
+  renderPlanGrid();
+  el('upgradeMod').classList.add('on');
+}
+function closeUpgrade() { el('upgradeMod').classList.remove('on'); }
+
+function renderPlanGrid() {
+  el('planGrid').innerHTML = PLANS.map(function(p) {
+    var isActive = p.id === proStatus;
+
+    var btnLabel, btnClass, btnDisabled, btnOnclick;
+    if (isActive) {
+      btnLabel    = p.id === 'free' ? '✓ Plan actual (Gratis)' : '✓ Plan activo';
+      btnClass    = p.id === 'free' ? 'btn-sec' : 'btn-ok';
+      btnDisabled = true;
+      btnOnclick  = '';
+    } else if (p.id === 'free') {
+      btnLabel    = 'Plan base';
+      btnClass    = 'btn-ghost';
+      btnDisabled = true;
+      btnOnclick  = '';
+    } else {
+      btnLabel    = p.btnLabel;
+      btnClass    = p.btnClass;
+      btnDisabled = false;
+      btnOnclick  = "purchasePlan('" + p.id + "')";
+    }
+
+    var activeStyle = (isActive && p.id !== 'free')
+      ? 'border-color:var(--green);box-shadow:0 0 0 3px rgba(10,124,75,.12);'
+      : '';
+
+    var activeBanner = (isActive && p.id !== 'free')
+      ? '<div style="background:var(--green);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-align:center;padding:4px;border-radius:var(--r-sm) var(--r-sm) 0 0;margin:-20px -16px 10px">✓ TU PLAN ACTUAL</div>'
+      : '';
+
+    var featuredClass = (p.featured && !isActive) ? ' featured' : '';
+
+    var featRows = p.features.map(function(f) {
+      return '<div class="plan-feat-row">'
+        + '<span class="fi">' + (f.ok ? '✅' : '❌') + '</span>'
+        + '<span style="color:' + (f.ok ? 'var(--ink2)' : 'var(--ink4)') + '">' + f.text + '</span>'
+        + '</div>';
+    }).join('');
+
+    var btnAttr = btnDisabled
+      ? 'disabled style="width:100%;justify-content:center;opacity:.7"'
+      : 'onclick="' + btnOnclick + '" style="width:100%;justify-content:center"';
+
+    return '<div class="plan-card' + featuredClass + '" style="' + activeStyle + '">'
+      + activeBanner
+      + '<div class="plan-body">'
+      + '<div class="plan-name">' + p.name + '</div>'
+      + '<div class="plan-price">' + p.price + '<br><span>' + p.period + '</span></div>'
+      + '<div class="plan-desc">' + p.desc + '</div>'
+      + '<div class="plan-features">' + featRows + '</div>'
+      + '<button class="btn ' + btnClass + ' btn-md" ' + btnAttr + '>' + btnLabel + '</button>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+
+// Tu número de WhatsApp — cambiá por el tuyo real
+var OWNER_WA = '5493412271213'; // formato internacional sin + ni espacios
+var OWNER_IG = 'lautaroantunez'; // not used publicly
+
+function contactWA() {
+  var msg = '¡Hola Lautaro! Vi PresupuestoPro y quiero activar el plan Pro. ¿Cómo hago?';
+  window.open('https://wa.me/' + OWNER_WA + '?text=' + encodeURIComponent(msg), '_blank');
+}
+function contactIG() {
+  window.open('https://instagram.com/' + OWNER_IG, '_blank');
+}
+
+function purchasePlan(planId) {
+  // Open MercadoPago payment link
+  const link = MP_LINKS[planId];
+  if (link && !link.includes('TU_LINK')) {
+    window.open(link, '_blank');
+    // Show instruction after opening payment
+    setTimeout(() => {
+      el('activationMsg').innerHTML =
+        '<span style="color:var(--primary)">✓ Página de pago abierta. Una vez que pagues, te mandamos el código por WhatsApp.</span>';
+    }, 800);
+  } else {
+    // MP link not configured yet — show WhatsApp contact instead
+    const waMsg = encodeURIComponent(
+      '¡Hola! Quiero activar PresupuestoPro ' +
+      (planId === 'monthly' ? 'Pro Mensual ($3.500/mes)' : 'Pro Vitalicio ($50.000 único)') +
+      '. ¿Cómo procedo con el pago?'
+    );
+    window.open('https://wa.me/' + OWNER_WA + '?text=' + waMsg, '_blank');
+    setTimeout(() => {
+      el('activationMsg').innerHTML =
+        '<span style="color:var(--amber)">⚡ Te abrimos WhatsApp para coordinar el pago. Configurá tu link de MercadoPago en la sección Configuración.</span>';
+    }, 500);
+  }
+}
+
+function activateCode() {
+  const code = (gv('activationInput') || '').trim().toUpperCase();
+  const msgEl = el('activationMsg');
+  if (!code) {
+    msgEl.innerHTML = '<span style="color:var(--red)">Ingresá el código de activación.</span>';
+    return;
+  }
+  if (code === ACTIVATION_CODES.lifetime.toUpperCase()) {
+    proStatus = 'lifetime';
+    localStorage.setItem('pp4_pro', 'lifetime');
+    localStorage.setItem('pp4_pro_v', PRO_VERSION);
+    closeUpgrade(); renderFreemiumBanner(); updateStats();
+    toast('💎 ¡Pro Vitalicio activado! Gracias por tu apoyo.', 'ok');
+  } else if (code === ACTIVATION_CODES.monthly.toUpperCase()) {
+    proStatus = 'monthly';
+    localStorage.setItem('pp4_pro', 'monthly');
+    localStorage.setItem('pp4_pro_v', PRO_VERSION);
+    closeUpgrade(); renderFreemiumBanner(); updateStats();
+    toast('⭐ ¡Pro Mensual activado! Gracias por tu apoyo.', 'ok');
+  } else {
+    msgEl.innerHTML = '<span style="color:var(--red)">❌ Código incorrecto. Revisá que esté bien escrito o contactanos por WhatsApp.</span>';
+    el('activationInput').focus();
+  }
+}
+
+function renderFreemiumBanner() {
+  // Update sidebar Pro button
+  const navProBtn = el('navProBtn');
+  const navProLabel = el('navProLabel');
+  if (isPro()) {
+    navProLabel.textContent = proStatus === 'lifetime' ? '💎 Pro Vitalicio' : '⭐ Pro Activo';
+    navProBtn.style.color = 'rgba(255,255,255,.85)';
+    navProBtn.style.background = 'rgba(26,86,232,.2)';
+  } else {
+    navProLabel.textContent = 'Actualizar a Pro';
+    navProBtn.style.background = 'rgba(26,86,232,.15)';
+    navProBtn.style.color = '#93adf5';
+  }
+
+  // Inject usage banner at top of dashboard and nuevo screens
+  const usedThisMonth = createdThisMonth(); // immutable — not affected by deletions
+
+  const dashBanner = el('dashFreemiumBanner');
+  const nuevoBanner = el('nuevoFreemiumBanner');
+
+  if (isPro()) {
+    const badge = proStatus === 'lifetime' ? '💎 Pro Vitalicio' : '⭐ Pro Mensual';
+    const html = `<div class="upgrade-banner" style="background:linear-gradient(135deg,var(--b800),var(--green))">
+      <div class="upgrade-banner-ico">✅</div>
+      <div class="upgrade-banner-txt">
+        <h3>${badge} — Acceso completo desbloqueado</h3>
+        <p>Documentos ilimitados · Clientes ilimitados · Sin marca de agua</p>
+      </div>
+    </div>`;
+    if (dashBanner)  dashBanner.innerHTML  = html;
+    if (nuevoBanner) nuevoBanner.innerHTML = html;
+  } else {
+    const pct = Math.min(100, (usedThisMonth / FREE_LIMITS.docsPerMonth) * 100);
+    const barClass = pct >= 100 ? 'full' : pct >= 80 ? 'warn' : '';
+    const html = `<div class="upgrade-banner" style="cursor:pointer" onclick="openUpgrade()">
+      <div class="upgrade-banner-ico">📋</div>
+      <div class="upgrade-banner-txt" style="flex:1">
+        <h3>Plan Gratuito — ${usedThisMonth}/${FREE_LIMITS.docsPerMonth} documentos este mes</h3>
+        <div class="limit-bar-wrap" style="margin:5px 0 3px">
+          <div class="limit-bar-track"><div class="limit-bar-fill ${barClass}" style="width:${pct}%"></div></div>
+        </div>
+        <p>${pct >= 100 ? '⚠️ Límite alcanzado · Tocá para desbloquear Pro' : `Tocá para ver planes Pro desde $3.500/mes`}</p>
+      </div>
+      <button class="btn btn-pri btn-sm" onclick="openUpgrade();event.stopPropagation()">Actualizar</button>
+    </div>`;
+    if (dashBanner)  dashBanner.innerHTML  = html;
+    if (nuevoBanner) nuevoBanner.innerHTML = html;
+  }
+
+  // Update config plan status
+  const planStatusBody = el('planStatusBody');
+  if (planStatusBody) {
+    if (isPro()) {
+      planStatusBody.innerHTML = `<span style="color:var(--green);font-weight:700">${proStatus === 'lifetime' ? '💎 Pro Vitalicio' : '⭐ Pro Mensual'}</span> — Acceso completo activo. ¡Gracias por apoyar PresupuestoPro!`;
+    } else {
+      planStatusBody.innerHTML = `<span style="font-weight:600">Plan Gratuito</span> — ${FREE_LIMITS.docsPerMonth} documentos/mes · ${FREE_LIMITS.clients} clientes · PDF con marca de agua. <span style="color:var(--primary);cursor:pointer" onclick="openUpgrade()">Actualizá a Pro →</span>`;
+    }
+  }
+}
+
+// Watermark helper for free plan PDFs
+// ═══════════════════════════════════════
+//  BACKUP
+// ═══════════════════════════════════════
+// exportBackup / importBackup defined below
+
+function getWatermarkText() {
+  // Always show @lautaroantunez on every document — free or pro
+  var custom = cfg.footer ? cfg.footer + '  ·  ' : '';
+  return custom + '@lautaroantunez';
+}
+function getWatermarkTextFree() {
+  return getWatermarkText();
+}
+
+// ═══════════════════════════════════════
+//  PRODUCTS CATALOG
+// ═══════════════════════════════════════
+// saveProducts defined above in persist block
+
+function renderProducts() {
+  const cont = document.getElementById('productList'); if (!cont) return;
+  const q = (document.getElementById('prodSearch')?.value || '').toLowerCase();
+  const list = products.filter(p => !q || p.name.toLowerCase().includes(q) || (p.cat||'').toLowerCase().includes(q));
+  if (!list.length) {
+    cont.innerHTML = '<div class="empty-state"><div class="ei">📦</div><h3>Sin productos aún</h3><p>Agregá productos o servicios para autocompletar al crear documentos</p></div>';
+    return;
+  }
+  const sym = csym(), f = fmt;
+  cont.innerHTML = list.map(p => '<div class="doc-card">'
+    + '<div class="doc-ico pres" style="font-size:1.1rem">📦</div>'
+    + '<div class="doc-inf"><h3>' + esc(p.name) + '</h3>'
+    + '<p>' + (p.cat||'Sin categoría') + (p.unit ? ' · ' + p.unit : '') + '</p></div>'
+    + '<div class="doc-tot">' + sym + ' ' + f(p.price||0) + '</div>'
+    + '<div class="doc-acts">'
+    + '<button class="btn btn-blue-lt btn-sq" onclick="editProduct(' + p.id + ')" aria-label="Editar producto">✏️</button>'
+    + '<button class="btn btn-del btn-sq" onclick="delProduct(' + p.id + ')" aria-label="Eliminar producto">🗑</button>'
+    + '</div></div>'
+  ).join('');
+}
+
+function openNewProduct() { openProductModal(null); }
+function editProduct(id)  { openProductModal(products.find(p => p.id === id)); }
+
+function openProductModal(p) {
+  const old = document.getElementById('prodModalOv'); if (old) old.remove();
+  const ov = document.createElement('div');
+  ov.id = 'prodModalOv'; ov.className = 'modal-ov on';
+  ov.innerHTML = '<div class="modal" style="max-width:380px">'
+    + '<h2>' + (p ? 'Editar producto' : 'Nuevo producto/servicio') + '</h2>'
+    + '<div class="fg fg1">'
+    + '<div class="fgrp"><label>Nombre / Descripción *</label><input type="text" id="pName" value="' + esc(p?.name||'') + '" placeholder="Ej: Mano de obra eléctrica"/></div>'
+    + '<div class="fgrp"><label>Categoría</label><input type="text" id="pCat" value="' + esc(p?.cat||'') + '" placeholder="Ej: Mano de obra"/></div>'
+    + '<div class="fg fg2">'
+    + '<div class="fgrp"><label>Precio unitario</label><input type="number" id="pPrice" value="' + (p?.price||'') + '" placeholder="0" min="0" step="any"/></div>'
+    + '<div class="fgrp"><label>Unidad</label><input type="text" id="pUnit" value="' + esc(p?.unit||'') + '" placeholder="Unidad, Hora…"/></div>'
+    + '</div></div>'
+    + '<div class="modal-foot">'
+    + '<button class="btn btn-ghost" onclick="closeProdModal()">Cancelar</button>'
+    + '<button class="btn btn-pri" onclick="saveProduct(' + (p?p.id:'null') + ')">Guardar</button>'
+    + '</div></div>';
+  document.body.appendChild(ov);
+}
+
+function closeProdModal() {
+  var m = document.getElementById('prodModalOv'); if (m) m.remove();
+}
+function saveProduct(id) {
+  const name = (document.getElementById('pName')?.value||'').trim();
+  if (!name) { toast('Ingresá un nombre', 'err'); return; }
+  const data = { name, cat: document.getElementById('pCat')?.value||'', price: +document.getElementById('pPrice')?.value||0, unit: document.getElementById('pUnit')?.value||'' };
+  if (id) {
+    const idx = products.findIndex(p => p.id === id);
+    if (idx !== -1) products[idx] = { ...products[idx], ...data };
+  } else {
+    products.push({ id: Date.now(), ...data });
+  }
+  saveProducts();
+  document.getElementById('prodModalOv')?.remove();
+  renderProducts();
+  toast('Producto guardado', 'ok');
+}
+
+function delProduct(id) {
+  showConfirm('¿Eliminar este producto?', () => {
+    products = products.filter(p => p.id !== id);
+    saveProducts(); renderProducts();
+    toast('Producto eliminado', 'inf');
+  });
+}
+
+function filterProducts(q) {
+  var dd = document.getElementById('productDD'); if (!dd) return;
+  if (!q || q.length < 2) { dd.style.display = 'none'; return; }
+  var matches = products.filter(function(p){ return p.name.toLowerCase().includes(q.toLowerCase()); }).slice(0,6);
+  if (!matches.length) { dd.style.display = 'none'; return; }
+  var sym = csym(), f = fmt;
+  dd.innerHTML = '';
+  matches.forEach(function(p) {
+    var item = document.createElement('div');
+    item.style.cssText = 'padding:10px 12px;cursor:pointer;border-bottom:1px solid var(--line2);font-size:.83rem;display:flex;justify-content:space-between;align-items:center';
+    item.innerHTML = '<span>' + esc(p.name) + (p.cat ? ' <span style="color:var(--ink3);font-size:.74rem">· ' + esc(p.cat) + '</span>' : '') + '</span>'
+      + '<span style="color:var(--primary);font-weight:700;font-size:.82rem">' + sym + ' ' + f(p.price||0) + '</span>';
+    item.addEventListener('mouseenter', function(){ this.style.background='var(--b50)'; });
+    item.addEventListener('mouseleave', function(){ this.style.background=''; });
+    item.addEventListener('mousedown',  function(){ selectProduct(p.id); });
+    dd.appendChild(item);
+  });
+  dd.style.display = '';
+}
+function selectProduct(id) {
+  const p = products.find(x => x.id == id); if (!p) return;
+  document.getElementById('nIDesc').value  = p.name;
+  document.getElementById('nIPrice').value = p.price || '';
+  if (p.unit) {
+    const sel = document.getElementById('nIType');
+    for (let i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value.toLowerCase() === p.unit.toLowerCase()) { sel.selectedIndex = i; break; }
+    }
+  }
+  hideProductDD();
+  document.getElementById('nIQty').focus();
+}
+
+function hideProductDD() {
+  const dd = document.getElementById('productDD');
+  if (dd) dd.style.display = 'none';
+}
+
+// ═══════════════════════════════════════
+//  BACKUP — EXPORT / IMPORT
+// ═══════════════════════════════════════
+function exportBackup() {
+  const data = {
+    version: 'pp4_backup_v1',
+    exportedAt: new Date().toISOString(),
+    docs, clients, products, biz, cfg,
+    logoURL: logoURL || null,
+  };
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  const date = new Date().toISOString().slice(0,10);
+  a.href = url; a.download = 'presupuestopro_backup_' + date + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  toast('Backup exportado', 'ok');
+}
+
+function importBackup(event) {
+  const file = event.target.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data.version || !data.version.startsWith('pp4_backup')) {
+        document.getElementById('backupMsg').textContent = 'Archivo no válido.';
+        return;
+      }
+      showConfirm('¿Restaurar backup? Se reemplazarán todos tus datos actuales.', () => {
+        if (data.docs)     { docs = data.docs; localStorage.setItem('pp4_docs', JSON.stringify(docs)); }
+        if (data.clients)  { clients = data.clients; localStorage.setItem('pp4_clients', JSON.stringify(clients)); }
+        if (data.products) { products = data.products; saveProducts(); }
+        if (data.biz)      { biz = data.biz; localStorage.setItem('pp4_biz', JSON.stringify(biz)); }
+        if (data.cfg)      { cfg = data.cfg; localStorage.setItem('pp4_cfg', JSON.stringify(cfg)); }
+        if (data.logoURL)  { logoURL = data.logoURL; localStorage.setItem('pp4_logo', logoURL); applyLogo(logoURL); }
+        updateStats(); updateDashWelcome(); renderRecent(); renderReminders();
+        renderDocs(); renderClients(); renderProducts();
+        loadBizFields(); loadCfgFields(); updateBadges();
+        syncToCloud(); // push restored data to cloud
+        document.getElementById('backupMsg').innerHTML = '<span style="color:var(--green)">✓ Backup restaurado y sincronizado.</span>';
+        toast('✓ Backup restaurado', 'ok');
+      });
+    } catch(err) {
+      document.getElementById('backupMsg').textContent = 'Error al leer el archivo: ' + err.message;
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+// ═══════════════════════════════════════
+//  WELCOME ONBOARDING
+// ═══════════════════════════════════════
+function maybeShowWelcome() {
+  if (!localStorage.getItem('pp4_welcomed')) {
+    setTimeout(function() {
+      var m = document.getElementById('welcomeMod');
+      if (m) m.classList.add('on');
+    }, 2200); // after splash
+  }
+}
+function closeWelcome() {
+  localStorage.setItem('pp4_welcomed', '1');
+  var m = document.getElementById('welcomeMod');
+  if (m) m.classList.remove('on');
+}
+
+// ═══════════════════════════════════════
+//  SPLASH SCREEN
+// ═══════════════════════════════════════
+function initSplash() {
+  var splash = document.getElementById('splashScreen');
+  var bar    = document.getElementById('splashBar');
+  if (!splash) return;
+  setTimeout(function() { if (bar) bar.style.width = '100%'; }, 80);
+  setTimeout(function() {
+    splash.style.opacity = '0';
+    splash.style.pointerEvents = 'none';
+    setTimeout(function() {
+      splash.style.display = 'none';
+      // Refresh dashboard now that it's visible
+      updateDashWelcome();
+      updateStats();
+      renderRecent();
+      renderReminders();
+    }, 520);
+  }, 1900);
+  maybeShowWelcome();
+}
+
+// ═══════════════════════════════════════
+//  DEVICE LINKING
+// ═══════════════════════════════════════
+function showDeviceLink() {
+  if (!fbUID) { toast('Conectando a la nube...', 'inf'); return; }
+  // Show a modal with the UID code for linking
+  var short = fbUID.slice(0,8).toUpperCase();
+  var existing = document.getElementById('deviceLinkMod');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'deviceLinkMod';
+  ov.className = 'modal-ov on';
+  ov.innerHTML = '<div class="modal" style="max-width:360px;text-align:center">'
+    + '<h2 style="margin-bottom:6px">🔗 Vincular dispositivo</h2>'
+    + '<p style="font-size:.82rem;color:var(--ink3);margin-bottom:18px">Para ver tus datos en otro celular o computadora, ingresá tu código de vinculación en el nuevo dispositivo.</p>'
+    + '<div style="background:var(--b50);border-radius:var(--r);padding:16px;margin-bottom:16px">'
+    + '<div style="font-size:.7rem;color:var(--ink3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Tu código</div>'
+    + '<div style="font-size:2rem;font-weight:800;letter-spacing:.15em;color:var(--primary);font-family:monospace">' + short + '</div>'
+    + '<div style="font-size:.7rem;color:var(--ink3);margin-top:6px">Código completo: <span style="font-size:.65rem">' + fbUID + '</span></div>'
+    + '</div>'
+    + '<div style="margin-bottom:14px">'
+    + '<div style="font-size:.78rem;font-weight:700;margin-bottom:8px">¿Tenés un código de otro dispositivo?</div>'
+    + '<input type="text" id="linkCodeInput" placeholder="Pegá el código completo aquí" style="width:100%;margin-bottom:8px;font-family:monospace;font-size:.75rem"/>'
+    + '<button class="btn btn-pri" style="width:100%;justify-content:center" onclick="applyDeviceLink()">Vincular y cargar mis datos</button>'
+    + '</div>'
+    + '<button class="btn btn-ghost" onclick="document.getElementById(&quot;deviceLinkMod&quot;).remove()">Cerrar</button>'
+    + '</div>';
+  document.body.appendChild(ov);
+}
+
+function applyDeviceLink() {
+  var code = (document.getElementById('linkCodeInput').value || '').trim();
+  if (!code || code.length < 20) { toast('Código inválido', 'err'); return; }
+  showCloudIndicator('☁️ Cargando datos del otro dispositivo...');
+  document.getElementById('deviceLinkMod').remove();
+  db.collection('users').doc(code).get()
+    .then(function(snap) {
+      if (!snap.exists) { hideCloudIndicator(); toast('No se encontraron datos con ese código', 'err'); return; }
+      var data = snap.data();
+      if (data.docs)     { docs = data.docs;         localStorage.setItem('pp4_docs',     JSON.stringify(docs)); }
+      if (data.clients)  { clients = data.clients;   localStorage.setItem('pp4_clients',  JSON.stringify(clients)); }
+      if (data.products) { products = data.products; localStorage.setItem('pp4_products', JSON.stringify(products)); }
+      if (data.biz)      { biz = data.biz;           localStorage.setItem('pp4_biz',      JSON.stringify(biz)); }
+      if (data.cfg)      { cfg = data.cfg;           localStorage.setItem('pp4_cfg',      JSON.stringify(cfg)); }
+      if (data.logoURL)  { logoURL = data.logoURL;   localStorage.setItem('pp4_logo',     logoURL); }
+      // Now also save under current UID so this device syncs going forward
+      syncToCloud();
+      loadBizFields(); loadCfgFields(); updateSidebar(); updateStats();
+      updateDashWelcome(); renderRecent(); renderReminders();
+      renderDocs(); renderClients(); renderProducts();
+      if (logoURL) applyLogo(logoURL);
+      updateBadges();
+      hideCloudIndicator();
+      toast('✓ Datos vinculados correctamente', 'ok');
+    })
+    .catch(function(err) {
+      hideCloudIndicator();
+      toast('Error al cargar datos: ' + err.message, 'err');
+    });
+}
+
+// ═══════════════════════════════════════
+//  DARK MODE
+// ═══════════════════════════════════════
+function initDarkMode() {
+  if (localStorage.getItem('pp4_dark') === '1') applyDark(true);
+}
+function toggleDarkMode() {
+  var isDark = document.body.classList.contains('dark-mode');
+  applyDark(!isDark);
+  localStorage.setItem('pp4_dark', isDark ? '0' : '1');
+}
+function applyDark(on) {
+  document.body.classList.toggle('dark-mode', on);
+  var btn = document.getElementById('darkModeBtn');
+  if (btn) btn.innerHTML = on ? '☀️ Modo claro' : '🌙 Modo oscuro';
+}
+
+// ═══════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════
+function el(id)  { return document.getElementById(id); }
+function gv(id)  { return (el(id) || {}).value || ''; }
+function clr(...ids) { ids.forEach(id => { const e = el(id); if (e) e.value = ''; }); }
+function esc(s)  { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+function padN(n) { return String(n).padStart(4, '0'); }
+function toISO(d){ return d.toISOString().split('T')[0]; }
+function fmtDate(d){ if (!d) return '—'; const [y,m,dd] = d.split('-'); return `${dd}/${m}/${y}`; }
+// ═══════════════════════════════════════
+//  PWA INSTALL
+// ═══════════════════════════════════════
+function showInstallInstructions() {
+  var ua = navigator.userAgent.toLowerCase();
+  var isIOS     = /iphone|ipad|ipod/.test(ua);
+  var isAndroid = /android/.test(ua);
+  var isChrome  = /chrome/.test(ua) && !/edge/.test(ua);
+  var isSafari  = /safari/.test(ua) && !/chrome/.test(ua);
+  var isStandalone = window.navigator.standalone === true ||
+                     window.matchMedia('(display-mode: standalone)').matches;
+
+  if (isStandalone) {
+    document.getElementById('iosMod').classList.remove('on');
+    alert('Ya tenes la app instalada en tu inicio.');
+    return;
+  }
+
+  var title, steps;
+
+  if (isIOS && isSafari) {
+    title = 'Instalar en iPhone / iPad (Safari)';
+    steps = [
+      { n:'1', text:'Tocá el boton <strong>Compartir</strong> (el cuadrado con la flecha hacia arriba) en la barra de Safari, abajo de la pantalla.' },
+      { n:'2', text:'Desplaza hacia abajo y tocá <strong>"Agregar a pantalla de inicio"</strong>.' },
+      { n:'3', text:'Tocá <strong>Agregar</strong> arriba a la derecha. Listo, el icono aparece en tu inicio.' },
+    ];
+  } else if (isIOS && !isSafari) {
+    title = 'Abri la app en Safari para instalarla';
+    steps = [
+      { n:'!', text:'Chrome y otras apps en iPhone <strong>no permiten instalar</strong> apps en el inicio.' },
+      { n:'1', text:'Copia este link y <strong>abrilos en Safari</strong> (el navegador con el icono de brujula).' },
+      { n:'2', text:'Desde Safari, tocá Compartir → "Agregar a pantalla de inicio".' },
+    ];
+  } else if (isAndroid && isChrome) {
+    title = 'Instalar en Android (Chrome)';
+    steps = [
+      { n:'1', text:'Tocá los <strong>tres puntos</strong> (menu) arriba a la derecha del navegador.' },
+      { n:'2', text:'Tocá <strong>"Agregar a pantalla de inicio"</strong> o <strong>"Instalar app"</strong>.' },
+      { n:'3', text:'Confirma tocando <strong>Agregar</strong>. El icono aparece en tu inicio.' },
+    ];
+  } else if (isAndroid) {
+    title = 'Instalar en Android';
+    steps = [
+      { n:'1', text:'Abri el <strong>menu de tu navegador</strong> (normalmente tres puntos arriba a la derecha).' },
+      { n:'2', text:'Buscá la opcion <strong>"Agregar a pantalla de inicio"</strong> o <strong>"Instalar"</strong>.' },
+      { n:'3', text:'Confirma. El icono de PresupuestoPro aparece en tu inicio.' },
+    ];
+  } else {
+    title = 'Agregar a tu pantalla de inicio';
+    steps = [
+      { n:'1', text:'Abri el <strong>menu de tu navegador</strong> (tres puntos o similar).' },
+      { n:'2', text:'Buscá <strong>"Agregar a pantalla de inicio"</strong> o <strong>"Instalar"</strong>.' },
+      { n:'3', text:'Confirma y listo.' },
+    ];
+  }
+
+  // If Android Chrome, also try native prompt
+  if (isAndroid && isChrome && _installPrompt) {
+    _installPrompt.prompt();
+    _installPrompt.userChoice.then(function(r) {
+      if (r.outcome === 'accepted') {
+        localStorage.setItem(_installKey, '1');
+        document.getElementById('btnInstallApp').style.display = 'none';
+      }
+      _installPrompt = null;
+    });
+    return;
+  }
+
+  document.getElementById('installModalTitle').textContent = title;
+  document.getElementById('installModalSteps').innerHTML = steps.map(function(s) {
+    return '<div style="display:flex;gap:12px;align-items:flex-start;background:var(--b50);border-radius:var(--r);padding:12px 14px">'
+      + '<div style="min-width:28px;height:28px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0">' + s.n + '</div>'
+      + '<div style="font-size:.82rem;color:var(--ink2);line-height:1.55">' + s.text + '</div>'
+      + '</div>';
+  }).join('');
+
+  document.getElementById('iosMod').classList.add('on');
+}
+
+var _installPrompt  = null;
+var _installKey     = 'pp4_install_done';     // set when user installs
+var _dismissKey     = 'pp4_install_nodshow';  // set when user says "never show again"
+var _remindKey      = 'pp4_install_remind';   // timestamp for "remind later"
+
+// Only show banner if:
+//  - not already installed
+//  - not permanently dismissed
+//  - remind-later delay has passed (or never set)
+function shouldShowInstall() {
+  if (localStorage.getItem(_installKey))  return false; // already installed
+  if (localStorage.getItem(_dismissKey))  return false; // never show again
+  var remind = localStorage.getItem(_remindKey);
+  if (remind && Date.now() < parseInt(remind)) return false; // snooze active
+  return true;
+}
+
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  _installPrompt = e;
+  if (shouldShowInstall()) {
+    setTimeout(function() { showInstallBanner('android'); }, 3500);
+  }
+});
+
+window.addEventListener('appinstalled', function() {
+  localStorage.setItem(_installKey, '1');
+  hideInstallBanner();
+  toast('App instalada. Ya podés abrirla desde tu inicio.', 'ok');
+});
+
+function showInstallBanner(platform) {
+  var banner = document.getElementById('installBanner');
+  if (!banner) return;
+  banner.style.display = '';
+  banner.style.transform = 'translateY(100%)';
+  banner.style.transition = 'transform .35s ease';
+  setTimeout(function() { banner.style.transform = 'translateY(0)'; }, 20);
+}
+
+function hideInstallBanner() {
+  var banner = document.getElementById('installBanner');
+  if (!banner) return;
+  banner.style.transform = 'translateY(100%)';
+  setTimeout(function() { banner.style.display = 'none'; }, 350);
+}
+
+function doInstall() {
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  if (isIOS || !_installPrompt) {
+    document.getElementById('iosMod').classList.add('on');
+    hideInstallBanner();
+    return;
+  }
+  _installPrompt.prompt();
+  _installPrompt.userChoice.then(function(result) {
+    if (result.outcome === 'accepted') {
+      localStorage.setItem(_installKey, '1');
+      hideInstallBanner();
+    }
+    _installPrompt = null;
+  });
+}
+
+// "Ahora no" — snooze 3 days
+function remindLater() {
+  var in3days = Date.now() + (3 * 24 * 60 * 60 * 1000);
+  localStorage.setItem(_remindKey, String(in3days));
+  hideInstallBanner();
+  toast('Te lo recordamos en 3 días', 'inf');
+}
+
+// "✕" — never show again
+function dismissInstallForever() {
+  localStorage.setItem(_dismissKey, '1');
+  hideInstallBanner();
+}
+
+// Manual trigger — called from sidebar button
+function manualInstall() {
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase());
+  var isStandalone = window.navigator.standalone === true
+    || window.matchMedia('(display-mode: standalone)').matches;
+  if (isStandalone) {
+    toast('La app ya está instalada en tu inicio.', 'ok'); return;
+  }
+  if (_installPrompt) {
+    // Android Chrome — native prompt available
+    _installPrompt.prompt();
+    _installPrompt.userChoice.then(function(r) {
+      if (r.outcome === 'accepted') { localStorage.setItem(_installKey, '1'); }
+      _installPrompt = null;
+    });
+  } else if (isIOS) {
+    // iOS — show step-by-step modal
+    document.getElementById('iosMod').classList.add('on');
+  } else {
+    // Desktop or browser that doesn't support prompt — show instructions
+    showInstallBanner('android');
+  }
+}
+
+// Update install button state — never hide it
+(function() {
+  var isStandalone = window.navigator.standalone === true ||
+                     window.matchMedia('(display-mode: standalone)').matches;
+  if (isStandalone) {
+    // Running as installed app — change button to show it's installed
+    localStorage.setItem(_installKey, '1');
+    var btn = document.getElementById('btnInstallApp');
+    if (btn) {
+      btn.textContent = '✅ App instalada';
+      btn.style.background   = 'rgba(10,124,75,.15)';
+      btn.style.color        = '#6ee7b7';
+      btn.style.borderColor  = 'rgba(10,124,75,.25)';
+      btn.style.cursor       = 'default';
+      btn.onclick            = null;
+    }
+  } else {
+    // Not installed — make sure button is always visible and clickable
+    var btn = document.getElementById('btnInstallApp');
+    if (btn) btn.style.display = '';
+  }
+})();
+
+function generarReporteMensual() {
+  const { jsPDF } = window.jspdf;
+  if (!jsPDF) { toast('jsPDF no disponible', 'err'); return; }
+  const now   = new Date();
+  const month = now.getMonth(), year = now.getFullYear();
+  const sym   = csym(), f = fmt;
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const titulo = 'Reporte ' + meses[month] + ' ' + year;
+
+  const docsDelMes = docs.filter(d => {
+    const c = new Date(d.dateIssue || d.createdAt);
+    return c.getMonth() === month && c.getFullYear() === year;
+  });
+  const facturas    = docsDelMes.filter(d => d.type === 'factura');
+  const presups     = docsDelMes.filter(d => d.type === 'presupuesto');
+  const cobrados    = facturas.filter(d => d.status === 'cobrado');
+  const aprobados   = facturas.filter(d => d.status === 'accepted');
+  const totalEmit   = facturas.reduce((a,d) => a + docTot(d), 0);
+  const totalCobr   = cobrados.reduce((a,d) => a + docTot(d), 0);
+  const totalPend   = aprobados.reduce((a,d) => a + docTot(d), 0);
+
+  const pdf = new jsPDF({ orientation:'p', unit:'mm', format:'a4' });
+  const PW = 210, ML = 14, MR = 196, TW = MR - ML;
+  let y = 0;
+
+  // Header band
+  pdf.setFillColor(15, 45, 110);
+  pdf.rect(0, 0, PW, 28, 'F');
+  pdf.setTextColor(255,255,255);
+  pdf.setFontSize(16); pdf.setFont('helvetica','bold');
+  pdf.text('PresupuestoPro', ML, 11);
+  pdf.setFontSize(10); pdf.setFont('helvetica','normal');
+  pdf.text(titulo, ML, 19);
+  pdf.setFontSize(8);
+  pdf.text(biz.name || '', MR, 11, { align:'right' });
+  pdf.text(new Date().toLocaleDateString('es-AR'), MR, 18, { align:'right' });
+  y = 36;
+
+  // Summary cards (3 boxes)
+  const cards = [
+    { label:'Total facturado', val: sym + ' ' + f(totalEmit), color:[26,86,232] },
+    { label:'Cobrado',         val: sym + ' ' + f(totalCobr), color:[10,124,75] },
+    { label:'Por cobrar',      val: sym + ' ' + f(totalPend), color:[217,119,6]  },
+  ];
+  const cw = TW / 3 - 2;
+  cards.forEach((c, i) => {
+    const cx = ML + i * (cw + 3);
+    pdf.setFillColor(...c.color);
+    pdf.roundedRect(cx, y, cw, 18, 2, 2, 'F');
+    pdf.setTextColor(255,255,255);
+    pdf.setFontSize(7); pdf.setFont('helvetica','normal');
+    pdf.text(c.label.toUpperCase(), cx + cw/2, y + 6, { align:'center' });
+    pdf.setFontSize(11); pdf.setFont('helvetica','bold');
+    pdf.text(c.val, cx + cw/2, y + 14, { align:'center' });
+  });
+  y += 26;
+
+  // Stats row
+  pdf.setTextColor(60,70,100); pdf.setFontSize(8); pdf.setFont('helvetica','normal');
+  pdf.text('Presupuestos emitidos: ' + presups.length + '   Facturas: ' + facturas.length + '   Cobradas: ' + cobrados.length, ML, y);
+  y += 8;
+
+  // Line
+  pdf.setDrawColor(200,210,240); pdf.setLineWidth(0.3);
+  pdf.line(ML, y, MR, y); y += 6;
+
+  // Table header
+  const cols = [78, 20, 24, 28, 22];
+  const heads = ['Cliente', 'Fecha', 'Estado', 'Total', 'Tipo'];
+  pdf.setFillColor(240,244,255);
+  pdf.rect(ML, y, TW, 7, 'F');
+  pdf.setTextColor(30,40,80); pdf.setFontSize(7.5); pdf.setFont('helvetica','bold');
+  let cx2 = ML + 2;
+  heads.forEach((h, i) => { pdf.text(h, cx2, y+5); cx2 += cols[i]; });
+  y += 8;
+
+  // Table rows
+  pdf.setFont('helvetica','normal'); pdf.setFontSize(7.5);
+  docsDelMes.slice().reverse().forEach((d, idx) => {
+    if (y > 270) { pdf.addPage(); y = 20; }
+    if (idx % 2 === 0) { pdf.setFillColor(248,250,255); pdf.rect(ML, y-1, TW, 7, 'F'); }
+    const statusLabel = d.status === 'cobrado' ? 'Cobrado' : d.status === 'accepted' ? 'Aprobado' : isExp(d) ? 'Vencido' : 'Pendiente';
+    const row = [
+      (d.clientName || 'Sin nombre').slice(0,28),
+      fmtDate(d.dateIssue),
+      statusLabel,
+      sym + ' ' + f(docTot(d)),
+      d.type === 'factura' ? 'Factura' : 'Presup.',
+    ];
+    pdf.setTextColor(40,50,80);
+    cx2 = ML + 2;
+    row.forEach((v, i) => {
+      if (i === 2) {
+        const clr = d.status==='cobrado' ? [109,40,217] : d.status==='accepted' ? [10,124,75] : isExp(d) ? [185,28,28] : [180,120,0];
+        pdf.setTextColor(...clr);
+      } else pdf.setTextColor(40,50,80);
+      pdf.text(String(v), cx2, y+5); cx2 += cols[i];
+    });
+    y += 7;
+  });
+
+  if (!docsDelMes.length) {
+    pdf.setTextColor(150,160,180); pdf.setFontSize(9);
+    pdf.text('Sin documentos este mes', PW/2, y+10, { align:'center' });
+    y += 20;
+  }
+
+  // Footer
+  y += 6;
+  pdf.setDrawColor(200,210,240); pdf.line(ML, y, MR, y); y += 5;
+  pdf.setTextColor(150,160,180); pdf.setFontSize(7); pdf.setFont('helvetica','normal');
+  pdf.text('Generado por PresupuestoPro · @lautaroantunez', PW/2, y, { align:'center' });
+
+  const fname = 'reporte-' + meses[month].toLowerCase() + '-' + year + '.pdf';
+  pdf.save(fname);
+  toast('📊 Reporte ' + meses[month] + ' descargado', 'ok');
+}
+
+function isExp(d){ return d.type === 'presupuesto' && d.dateExpiry && new Date(d.dateExpiry) < new Date(); }
+function csym()  { return cfg.currency === 'USD' ? 'U$S' : cfg.currency === 'EUR' ? '€' : '$'; }
+function fmt(n)  { return n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function docTot(d) {
+  // Each item can have its own disc%, plus global discount on subtotal
+  const sub = d.items.reduce((a, it) => {
+    const lineTotal = it.qty * it.price;
+    return a + lineTotal - lineTotal * (it.disc || 0) / 100;
+  }, 0);
+  return (sub - sub * (d.discount || 0) / 100) * (1 + (d.ivaRate || 0) / 100);
+}
+// ─── PERSIST: saves locally immediately, syncs to cloud debounced ───────────
+function persist() {
+  // Always save locally first (instant, offline-safe)
+  localStorage.setItem('pp4_docs', JSON.stringify(docs));
+  localStorage.setItem('pp4_cfg',  JSON.stringify(cfg));
+  // Debounced cloud sync (avoids hammering Firestore on rapid edits)
+  clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(syncToCloud, 1500);
+}
+
+function saveProducts() {
+  localStorage.setItem('pp4_products', JSON.stringify(products));
+  clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(syncToCloud, 1500);
+}
+
+// ─── CLOUD SYNC ──────────────────────────────────────────────────────────────
+function showCloudIndicator(msg) {
+  var el = document.getElementById('cloudIndicator');
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = '';
+}
+function hideCloudIndicator() {
+  var el = document.getElementById('cloudIndicator');
+  if (el) el.style.display = 'none';
+}
+
+function syncToCloud() {
+  if (!fbUID || !fbReady) return;
+  showCloudIndicator('☁️ Guardando en la nube...');
+  var payload = {
+    docs:      docs,
+    clients:   clients,
+    products:  products,
+    biz:       biz,
+    cfg:       cfg,
+    logoURL:   logoURL || null,
+    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  db.collection('users').doc(fbUID).set(payload, { merge: true })
+    .then(function() {
+      hideCloudIndicator();
+    })
+    .catch(function(err) {
+      console.warn('[Cloud] Sync error:', err.message);
+      hideCloudIndicator();
+    });
+}
+
+function syncBizCfg() {
+  localStorage.setItem('pp4_biz', JSON.stringify(biz));
+  localStorage.setItem('pp4_cfg', JSON.stringify(cfg));
+  clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(syncToCloud, 1500);
+}
+
+function syncClients() {
+  localStorage.setItem('pp4_clients', JSON.stringify(clients));
+  clearTimeout(_syncTimer);
+  _syncTimer = setTimeout(syncToCloud, 1500);
+}
+
+// ─── LOAD FROM CLOUD ─────────────────────────────────────────────────────────
+function loadFromCloud(uid) {
+  showCloudIndicator('☁️ Cargando tus datos...');
+  db.collection('users').doc(uid).get()
+    .then(function(snap) {
+      if (snap.exists) {
+        var data = snap.data();
+        // Only overwrite local if cloud data is newer or local is empty
+        if (data.docs     && data.docs.length     >= docs.length)     { docs     = data.docs;     localStorage.setItem('pp4_docs',     JSON.stringify(docs)); }
+        if (data.clients  && data.clients.length  >= clients.length)  { clients  = data.clients;  localStorage.setItem('pp4_clients',  JSON.stringify(clients)); }
+        if (data.products && data.products.length >= products.length) { products = data.products; localStorage.setItem('pp4_products', JSON.stringify(products)); }
+        if (data.biz      && Object.keys(data.biz).length > 0)        { biz      = data.biz;      localStorage.setItem('pp4_biz',      JSON.stringify(biz)); }
+        if (data.cfg      && Object.keys(data.cfg).length > 0)        { cfg      = data.cfg;      localStorage.setItem('pp4_cfg',      JSON.stringify(cfg)); }
+        if (data.logoURL) { logoURL = data.logoURL; localStorage.setItem('pp4_logo', logoURL); }
+        // Refresh all UI
+        loadBizFields(); loadCfgFields(); updateSidebar(); updateStats();
+        updateDashWelcome(); renderRecent(); renderReminders();
+        renderDocs(); renderClients(); renderProducts();
+        if (logoURL) applyLogo(logoURL);
+        updateBadges();
+      } else {
+        // First time — push local data to cloud
+        syncToCloud();
+      }
+      hideCloudIndicator();
+      fbReady = true;
+    })
+    .catch(function(err) {
+      console.warn('[Cloud] Load error:', err.message);
+      hideCloudIndicator();
+      fbReady = true;
+    });
+}
+
+// ─── ANONYMOUS AUTH ──────────────────────────────────────────────────────────
+function initFirebase() {
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      fbUID = user.uid;
+      localStorage.setItem('pp4_fbuid', fbUID);
+      loadFromCloud(fbUID);
+    } else {
+      auth.signInAnonymously().catch(function(err) {
+        console.warn('[Auth] Anonymous sign-in failed:', err.message);
+        fbReady = true; // continue offline
+      });
+    }
+  });
+}
+function ls(k) { return localStorage.getItem(k); }
+function docBtnCobrado(d) { return d.status === 'cobrado' ? 'btn-ok' : 'btn-sec'; }
+function docBtnAcc(d)     { return d.status === 'accepted' ? 'btn-ok' : 'btn-sec'; }
+function chipSt(d) {
+  if (d.status === 'cobrado')  return '<span class="chip chip-cobrado">💰 Cobrado</span>';
+  if (d.status === 'accepted') return d.type === 'factura'
+    ? '<span class="chip chip-green">✓ Aprobado</span>'
+    : '<span class="chip chip-green">✓ Aprobado</span>';
+  if (isExp(d))                return '<span class="chip chip-red">⏰ Vencido</span>';
+  return '<span class="chip chip-amber">⏳ Pendiente</span>';
+}
+function toast(msg, type = 'inf') {
+  const t = el('toast'), dot = el('tdot'), m = el('tmsg');
+  dot.className = 'toast-dot ' + (type === 'ok' ? 'td-ok' : type === 'err' ? 'td-err' : 'td-inf');
+  m.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t = setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+
+
+<script>
+
+// ═══════════════════════════════════════
+//  SERVICE WORKER — OFFLINE MODE
+// ═══════════════════════════════════════
+(function() {
+  if (!('serviceWorker' in navigator)) return;
+
+  navigator.serviceWorker.register('./sw.js', { scope: './' })
+    .then(function(reg) {
+      // Check for updates every 60 min
+      setInterval(function() { reg.update(); }, 60 * 60 * 1000);
+      // Notify when new version is ready
+      reg.addEventListener('updatefound', function() {
+        var newSW = reg.installing;
+        if (!newSW) return;
+        newSW.addEventListener('statechange', function() {
+          if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+            showUpdateBanner();
+          }
+        });
+      });
+    })
+    .catch(function(err) {
+      // Silent fail — app works fine without SW
+      console.info('[SW] Not registered:', err.message);
+    });
+
+  // Offline / online indicator
+  function updateOnlineStatus() {
+    var ind = document.getElementById('offlineIndicator');
+    if (!ind) return;
+    ind.style.display = navigator.onLine ? 'none' : 'flex';
+  }
+  window.addEventListener('online',  updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+  updateOnlineStatus();
+})();
+
+function showUpdateBanner() {
+  var existing = document.getElementById('updateBanner');
+  if (existing) return;
+  var banner = document.createElement('div');
+  banner.id = 'updateBanner';
+  banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9995;background:linear-gradient(135deg,#0a1e50,#1a56e8);padding:12px 16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.3)';
+  banner.innerHTML = '<div style="flex:1"><div style="font-size:.85rem;font-weight:800;color:#fff;margin-bottom:2px">Nueva version disponible</div><div style="font-size:.74rem;color:rgba(255,255,255,.65)">Hay mejoras listas para vos.</div></div>'
+    + '<button onclick="applyUpdate()" style="background:#fff;color:#0f2d6e;border:none;border-radius:8px;padding:8px 14px;font-size:.8rem;font-weight:800;cursor:pointer">Actualizar</button>'
+    + '<button onclick="this.parentElement.remove()" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:1.1rem;cursor:pointer;padding:4px">✕</button>';
+  document.body.appendChild(banner);
+}
+
+function applyUpdate() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistration().then(function(reg) {
+      if (reg && reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+    });
+  }
+  location.reload();
+}
+
+</script>
+
+<!-- OFFLINE INDICATOR -->
+<div id="offlineIndicator" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9994;background:#b91c1c;color:#fff;font-size:.78rem;font-weight:700;text-align:center;padding:7px 12px;letter-spacing:.03em;align-items:center;justify-content:center;gap:8px"><span>Sin conexión</span><span style="font-weight:400;opacity:.8">— La app funciona igual, tus datos están guardados.</span></div>
+
+</body>
+</html>
